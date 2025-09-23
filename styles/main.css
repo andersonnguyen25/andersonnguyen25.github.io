@@ -11,7 +11,10 @@ body {
     border: 1px solid black;
     border-radius: 25px;
     box-shadow: 5px 5px 0 0;
-    background: lightblue url("images/cat.jpg") no-repeat fixed center;
+    background-image: url("../images/cat.jpg");
+    background-position: right;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
 }
 a:focus, a:hover{
     font-style: italic;
