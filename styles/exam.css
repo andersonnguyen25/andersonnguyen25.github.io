@@ -8,7 +8,7 @@ body {
     width: 95%;
 }
 nav {
-    background-color: cyan;
+    background-color: darkolivegreen;
     text-align: center;
     padding: 10px 0;
 }
@@ -47,7 +47,7 @@ aside {
     top: 160px;
     right: 10px;
     background-color: #cce0ff;
-    border: 2px solid cyan;
+    border: 2px solid darkolivegreen;
     padding: 10px;
 }
 aside ul {
@@ -69,7 +69,7 @@ footer{
     padding: 10px;
 }
 h1, h2 {
-    color: maroon;
+    color: black;
 }
 p {
     line-height: 1.6;
@@ -83,7 +83,7 @@ article {
     width: 70%;
     float: left;
     column-count: 3;
-    column-rule: 3px dotted cyan;
+    column-rule: 3px dotted darkolivegreen;
     column-gap: 2em;
     margin-left: 2em;
 }
