@@ -8,7 +8,7 @@ body {
     width: 95%;
 }
 nav {
-    background-color: #004080;
+    background-color: cyan;
     text-align: center;
     padding: 10px 0;
 }
@@ -47,7 +47,7 @@ aside {
     top: 160px;
     right: 10px;
     background-color: #cce0ff;
-    border: 2px solid #004080;
+    border: 2px solid cyan;
     padding: 10px;
 }
 aside ul {
@@ -56,7 +56,7 @@ aside ul {
 }
 aside a {
     text-decoration: none;
-    color: #004080;
+    color: cyan;
 }
 aside a:hover {
     text-decoration: underline;
@@ -69,7 +69,7 @@ footer{
     padding: 10px;
 }
 h1, h2 {
-    color: #004080;
+    color: maroon;
 }
 p {
     line-height: 1.6;
@@ -83,7 +83,7 @@ article {
     width: 70%;
     float: left;
     column-count: 3;
-    column-rule: 3px dotted #004080;
+    column-rule: 3px dotted cyan;
     column-gap: 2em;
     margin-left: 2em;
 }
