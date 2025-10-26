@@ -83,7 +83,7 @@ article {
     width: 70%;
     float: left;
     column-count: 3;
-    column-rule: 3px dotted cyan;
+    column-rule: 3px dotted #004080;
     column-gap: 2em;
     margin-left: 2em;
 }
