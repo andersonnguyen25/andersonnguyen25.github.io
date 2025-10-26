@@ -1,101 +1,93 @@
+html{
+    background-image: linear-gradient(to left, white 0%, orange 100%);
+}
 body {
-    width: 95%;
-    margin: 15px auto;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-    border: 2px solid black;
-    background-image: url("images/milkyway");
+    font-size: 100%;
+    width: 90%;
+    background-color: white;
+    margin: 15px auto;
+    padding: 15px 1.5em;
+    border: 1px solid black;
+    border-radius: 25px;
+    box-shadow: 5px 5px 0 0;
+    background-image: url("../images/milkyway.jpg");
+    background-position: right;
     background-repeat: repeat-y;
     background-attachment: fixed;
-    background-position: right;
 }
-
-/* Navigation Bar */
-nav {
-    background-color: #333;
+a:focus, a:hover{
+    font-style: italic;
+    color: cyan; 
+    border: 3px blue;
+    border-style: dotted solid;
 }
-.menu {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-around;
+h1 {
+    font-size: 175%;
+    color: pink;
+    text-indent: 30px;
 }
-.menu li a {
-    color: white;
-    text-decoration: none;
-    padding: 14px 20px;
-    display: block;
+h2 {
+    font-size: 130%;
+    color: #879564;
+    text-indent: 30px;
 }
-.menu li a:hover {
-    background-color: #555;
+img{
+    float: left;
+    margin-left: 2em;
 }
-
-/* Layout */
-main {
-    display: flex;
-    justify-content: space-between;
+.shadow{
+    text-shadow: 2px 2px 2px rgb(128, 0, 0);
 }
-article {
-    width: 75%;
-    padding: 10px;
-    border-right: 2px solid black;
+header {
+    border-bottom: 2px solid purple;
+}
+article{
+    clear: left;
+    width: 70%;
+    float: left;
+    column-count: 2;
+    column-rule: 2px dotted maroon;
+    column-gap: 2em;
+    margin-left: 2em;  
+}
+article h3{
+    column-span: all;
+}
+article img{
+    float: left;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+article p::first-letter{
+    font-size: 3em;
+    font-weight: bold;
+    font-style: italic;
+    color: lightgreen;
 }
 aside {
     width: 20%;
-    position: fixed;
-    right: 20px;
-    top: 120px;
-    border: 2px solid black;
-    padding: 10px;
-    background-color: #f5f5f5;
+    float: right;
+    background-color: #ffebc6;
+    padding: 2em;
 }
-
-/* Text Styling */
-h1, h2 {
-    border-bottom: 1px solid black;
-    padding-bottom: 4px;
+footer{
+    clear: both;
+    border-top: 2px solid maroon;
 }
-.dropcap {
-    font-size: 2em;
-    font-weight: bold;
-    font-style: italic;
-    float: left;
-    line-height: 1;
-    padding-right: 5px;
-}
-
-/* Image Wrapping */
-img {
-    float: left;
-    margin: 10px 20px 10px 0;
-    width: 200px;
-}
-
-/* Footer */
-footer {
-    border-top: 2px solid black;
+footer p.copyright{
     text-align: center;
-    margin-top: 30px;
-    padding: 10px;
+    font-size: 80%
 }
-footer a {
-    color: #0077b5;
-    text-decoration: none;
-}
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Aside List */
-aside ul {
-    list-style-type: square;
-    margin-left: 20px;
-}
-aside a {
-    text-decoration: none;
-    color: #333;
-}
-aside a:hover {
-    text-decoration: underline;
+p.fixed{
+    width: auto;
+    position: fixed;
+    background-color: lightgreen;
+    bottom: 300px;
+    right: 5px;
+    border: 4px solid green;
+    padding: 30px;
+    box-shadow: 2px 2px 5px gray;
+    font-weight: bold;
+    border-radius: 5px;
 }
