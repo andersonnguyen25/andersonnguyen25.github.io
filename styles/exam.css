@@ -69,7 +69,7 @@ footer{
     padding: 10px;
 }
 h1, h2 {
-    color: #00665e;
+    color: #004080;
 }
 p {
     line-height: 1.6;
@@ -83,7 +83,7 @@ article {
     width: 70%;
     float: left;
     column-count: 3;
-    column-rule: 3px dotted blue;
+    column-rule: 3px dotted cyan;
     column-gap: 2em;
     margin-left: 2em;
 }
