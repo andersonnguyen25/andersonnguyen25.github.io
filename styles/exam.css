@@ -2,7 +2,7 @@ body {
   width: 95%;
   margin: 15px auto;
   font-family: Arial, sans-serif;
-  background-image: url("image/cocomelon");
+  background-image: url("images/cocomelon.jpg");
   background-repeat: repeat-y;
   background-position: right;
   background-attachment: fixed;
