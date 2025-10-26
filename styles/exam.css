@@ -39,14 +39,14 @@ img {
     float: left;
     width: 150px;
     margin: 10px 15px 10px 0;
-    border: 1px solid #ccc;
+    border: 1px solid darkolivegreen;
 }
 aside {
     width: 20%;
     position: fixed;
     top: 160px;
     right: 10px;
-    background-color: #cce0ff;
+    background-color: darkolivegreen;
     border: 2px solid darkolivegreen;
     padding: 10px;
 }
