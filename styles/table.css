@@ -34,3 +34,42 @@ table.second th, table.second td {
 table.second thead tr:first-child{
     border-bottom: 2px solid purple;
 }
+/*-----------------------------------------------------------*/
+table.third {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table.third th,
+table.third td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+/* Specific row styling */
+table.third thead tr:first-child {
+  border-top: 2px solid orangered;
+  background-color: #f9f9f9;
+}
+
+table.third thead tr:nth-child(2) {
+  border-bottom: 2px solid orangered;
+}
+
+table.third tbody tr:last-child {
+  border-bottom: 2px solid orangered;
+}
+
+/* Media query for small screens */
+@media only screen and (max-width: 425px) {
+  th, td {
+    display: block;
+  }
+
+  thead,
+  td.number {
+    display: none;
+    padding: 0;
+  }
+}
