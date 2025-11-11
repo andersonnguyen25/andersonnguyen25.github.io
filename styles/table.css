@@ -37,7 +37,6 @@ table.second thead tr:first-child{
 /*-----------------------------------------------------------*/
 table.third {
   border-collapse: collapse;
-  border: 2px solid orangered;
   margin-top: 2em;
   width: 25%;
 }
