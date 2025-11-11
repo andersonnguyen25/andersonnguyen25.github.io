@@ -39,7 +39,7 @@ table.third {
   border-collapse: collapse;
   border: 2px solid orangered;
   margin-top: 2em;
-  width: 100%;
+  width: 40%;
 }
 
 table.third th, table.third td {
