@@ -1,7 +1,7 @@
 :root{
   --bg1: #eef6f9;
   --bg2: #f7f3fb;
-  --accent: #0ea5a4; /* teal */
+  --accent: #0ea5a4;
   --muted: #6b7280;
   --card: rgba(255,255,255,0.75);
   --glass: rgba(255,255,255,0.48);
@@ -21,7 +21,6 @@ body{
   padding:32px 18px;
 }
 
-/* container */
 .wrap{
   max-width:980px;
   margin:0 auto;
@@ -31,13 +30,14 @@ body{
   box-shadow: 0 8px 30px rgba(16,24,40,0.08);
 }
 
-/* header */
 header{
   display:flex;
   gap:14px;
   align-items:center;
   margin-bottom:14px;
+  position:relative;
 }
+
 .logo{
   width:64px;
   height:64px;
@@ -51,10 +51,169 @@ header{
   font-size:20px;
   box-shadow:0 6px 18px rgba(14,165,164,0.12);
 }
+
 h1{margin:0;font-size:18px;font-weight:600}
 .lead{margin:2px 0 0 0;color:var(--muted);font-size:13px}
 
-/* tabs */
+/* Staff authentication styles */
+.staff-auth-wrap{
+  position:relative;
+  margin-left:auto;
+}
+
+.staff-btn{
+  background:linear-gradient(90deg,var(--accent),#3ad6b8);
+  color:white;
+  border:none;
+  padding:10px 16px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  box-shadow:0 8px 20px rgba(14,165,164,0.12);
+  transition:transform 0.2s ease;
+}
+
+.staff-btn:hover{
+  transform:translateY(-2px);
+}
+
+.staff-dropdown{
+  position:absolute;
+  top:100%;
+  right:0;
+  margin-top:8px;
+  background:white;
+  border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.1);
+  min-width:320px;
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(-10px);
+  transition:all 0.2s ease;
+  z-index:1000;
+}
+
+.staff-dropdown.active{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-content{
+  padding:20px;
+}
+
+.auth-section h3{
+  margin:0 0 12px 0;
+  font-size:16px;
+  font-weight:600;
+}
+
+.form-group{
+  margin-bottom:12px;
+}
+
+.form-group label{
+  display:block;
+  font-size:13px;
+  font-weight:600;
+  color:var(--muted);
+  margin-bottom:6px;
+}
+
+.form-group input{
+  width:100%;
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(15,23,42,0.08);
+  background:linear-gradient(180deg,rgba(255,255,255,0.9),rgba(250,250,250,0.8));
+  font-size:14px;
+  outline:none;
+  transition:box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.form-group input:focus{
+  border-color:var(--accent);
+  box-shadow:0 6px 18px rgba(14,165,164,0.08);
+}
+
+.btn-auth{
+  width:100%;
+  background:linear-gradient(90deg,var(--accent),#3ad6b8);
+  color:white;
+  border:none;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:14px;
+  margin-top:8px;
+  box-shadow:0 8px 20px rgba(14,165,164,0.12);
+  transition:transform 0.2s ease;
+}
+
+.btn-auth:hover{
+  transform:translateY(-2px);
+}
+
+.auth-toggle{
+  font-size:13px;
+  color:var(--muted);
+  margin-top:12px;
+  text-align:center;
+}
+
+.auth-toggle a{
+  color:var(--accent);
+  text-decoration:none;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.auth-toggle a:hover{
+  text-decoration:underline;
+}
+
+.error-message{
+  font-size:12px;
+  color:#dc2626;
+  margin-top:8px;
+  text-align:center;
+}
+
+.logged-in-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.logged-in-header h3{
+  margin:0;
+  font-size:16px;
+  font-weight:600;
+}
+
+.btn-logout{
+  background:transparent;
+  color:var(--muted);
+  border:1px solid rgba(15,23,42,0.06);
+  padding:8px 12px;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:600;
+  font-size:13px;
+  transition:all 0.2s ease;
+}
+
+.btn-logout:hover{
+  background:rgba(220,38,38,0.08);
+  color:#dc2626;
+  border-color:#dc2626;
+}
+
+/* Tabs */
 input[name="tab"]{position:absolute;left:-9999px}
 .tabs-labels{display:flex;justify-content:center;margin:12px 0 18px}
 .tabs{display:flex;gap:8px;background:transparent;border-radius:999px;padding:6px}
@@ -68,6 +227,12 @@ input[name="tab"]{position:absolute;left:-9999px}
   transition:all .18s ease;
   border:1px solid transparent;
 }
+
+#payroll-tab-label{
+  opacity:0.5;
+  cursor:not-allowed;
+}
+
 #tab-appointment:checked ~ .tabs-labels .tabs label[for="tab-appointment"],
 #tab-payroll:checked ~ .tabs-labels .tabs label[for="tab-payroll"]{
   background:linear-gradient(90deg, rgba(14,165,164,0.12), rgba(110,231,183,0.08));
@@ -76,14 +241,12 @@ input[name="tab"]{position:absolute;left:-9999px}
   box-shadow: 0 4px 18px rgba(2,6,23,0.04);
 }
 
-/* tab content reveal */
 .tab-content section{display:none}
 #tab-appointment:checked ~ .tab-content section[aria-labelledby="appt-title"],
 #tab-payroll:checked ~ .tab-content section[aria-labelledby="pay-title"]{
   display:block;
 }
 
-/* cards */
 .card{
   background:var(--card);
   border-radius:var(--radius);
@@ -92,7 +255,6 @@ input[name="tab"]{position:absolute;left:-9999px}
   margin-bottom:12px;
 }
 
-/* thumbnails */
 .thumbs{display:flex;gap:8px;margin:8px 0 12px}
 .thumbs img{
   width:86px;height:56px;object-fit:cover;border-radius:8px;
@@ -102,7 +264,6 @@ input[name="tab"]{position:absolute;left:-9999px}
 }
 .thumbs img:hover{transform:translateY(-6px)}
 
-/* form grid */
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -126,7 +287,6 @@ input:focus, select:focus, textarea:focus{
   box-shadow:0 6px 18px rgba(14,165,164,0.08);
 }
 
-/* actions */
 .actions{
   display:flex;align-items:center;gap:8px;margin-top:6px;
 }
@@ -140,10 +300,8 @@ input:focus, select:focus, textarea:focus{
   box-shadow:none;
 }
 
-/* muted helper */
 .muted{color:var(--muted);font-size:13px}
 
-/* payroll table */
 table.pay{width:100%;border-collapse:separate;border-spacing:0 8px}
 table.pay thead th{font-weight:600;text-align:left;color:var(--muted);font-size:13px;padding:6px 10px;vertical-align:bottom}
 table.pay tbody tr{background:linear-gradient(180deg,rgba(255,255,255,0.8),rgba(250,250,250,0.88));border-radius:10px}
@@ -151,22 +309,18 @@ table.pay td{padding:8px 10px}
 table.pay input{background:transparent;border:none;padding:6px;font-size:14px;width:100%}
 table.pay input:focus{outline:none}
 
-/* result (gross/tax/net) cells */
 table.pay .result{font-weight:600;color:var(--muted);padding:10px 12px;white-space:nowrap}
 table.pay .result span{display:inline-block;min-width:56px;text-align:right;color:#0f172a}
 
-/* add/remove buttons */
 .btn.small{padding:6px 10px;font-size:13px;border-radius:8px}
 .remove-btn{
   margin-left:8px;border:none;background:transparent;color:var(--muted);cursor:pointer;font-size:14px;padding:4px 6px;border-radius:6px;
 }
 .remove-btn:hover{background:rgba(15,23,42,0.04);color:#111}
 
-/* summary area tweak */
 .summary{background:linear-gradient(180deg,rgba(255,255,255,0.92),rgba(250,250,250,0.9));padding:10px;border-radius:10px;margin-top:6px;gap:16px}
 .summary strong{color:var(--accent);margin-left:6px;font-weight:700}
 
-/* service details panel */
 .service-details{
   margin-top:10px;
   padding:10px;
@@ -181,14 +335,12 @@ table.pay .result span{display:inline-block;min-width:56px;text-align:right;colo
 .service-details .sd-desc{line-height:1.35}
 .service-details #sd-book{margin-top:8px}
 
-/* cart styles */
 .service-cart{margin-top:8px}
 .cart thead th{font-weight:600;color:var(--muted);font-size:13px;padding:6px 6px}
 .cart tbody td{padding:6px 6px;border-bottom:1px solid rgba(15,23,42,0.02)}
 .cart-total{font-size:14px;font-weight:600}
 .paypal-wrap{margin-top:10px}
 
-/* availability time buttons */
 .time-btn{
   background:linear-gradient(180deg,#fff,#fbfbfb);
   border-radius:8px;
@@ -199,17 +351,18 @@ table.pay .result span{display:inline-block;min-width:56px;text-align:right;colo
 }
 .time-btn:hover{ transform:translateY(-3px); box-shadow:0 8px 18px rgba(2,6,23,0.06); }
 
-/* Vagaro status message */
 #vagaro-status{font-size:13px;color:var(--muted);margin-top:6px}
 
-/* responsive */
 @media (max-width:720px){
   .grid{grid-template-columns:1fr}
   .thumbs img{width:72px;height:48px}
   .wrap{padding:16px}
+  header{flex-direction:column;align-items:flex-start}
+  .staff-auth-wrap{margin-left:0;width:100%;margin-top:12px}
+  .staff-btn{width:100%}
+  .staff-dropdown{right:0;min-width:100%}
 }
 
-/* small responsive tweaks */
 @media (max-width:520px){
   .cart thead th:nth-child(4), .cart tbody td:nth-child(4){display:block;text-align:right}
   .cart thead th:nth-child(5), .cart tbody td:nth-child(5){display:none}
