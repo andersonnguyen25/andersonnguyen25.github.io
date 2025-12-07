@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MontraThai — Quick Appointment & Payroll</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/Project4340.css">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/Bolt Database-js@2"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MontraThai — Quick Appointment & Payroll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/Project4340.css">
+
+  <!-- Supabase JS (correct CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
   <div class="wrap" role="main">
@@ -16,12 +18,13 @@
         <h1>MontraThai — Quick Booking & Payroll</h1>
         <p class="lead">Fast one-page appointment form and simple payroll sheet. Designed to minimize clicks.</p>
       </div>
-      
-      <!-- Staff login button dropdown -->
+
+      <!-- Staff login button + dropdown -->
       <div class="staff-auth-wrap">
         <button type="button" class="staff-btn" id="staff-btn">Staff Login</button>
         <div class="staff-dropdown" id="staff-dropdown">
           <div class="dropdown-content">
+            <!-- Login section -->
             <div id="auth-form" class="auth-section">
               <h3>Staff Sign In</h3>
               <div class="form-group">
@@ -33,10 +36,13 @@
                 <input type="password" id="login-password" placeholder="Enter password">
               </div>
               <button type="button" id="login-btn" class="btn-auth">Sign In</button>
-              <p class="auth-toggle">Don't have an account? <a href="#" id="toggle-signup">Sign up</a></p>
+              <p class="auth-toggle">Don't have an account?
+                <a href="#" id="toggle-signup">Sign up</a>
+              </p>
               <div id="login-error" class="error-message"></div>
             </div>
 
+            <!-- Signup section -->
             <div id="signup-form" class="auth-section" style="display:none">
               <h3>Create Staff Account</h3>
               <div class="form-group">
@@ -52,10 +58,13 @@
                 <input type="password" id="signup-password" placeholder="Create a password (min 6 chars)">
               </div>
               <button type="button" id="signup-btn" class="btn-auth">Create Account</button>
-              <p class="auth-toggle">Already have an account? <a href="#" id="toggle-signin">Sign in</a></p>
+              <p class="auth-toggle">Already have an account?
+                <a href="#" id="toggle-signin">Sign in</a>
+              </p>
               <div id="signup-error" class="error-message"></div>
             </div>
 
+            <!-- Logged-in section -->
             <div id="logged-in-section" class="auth-section" style="display:none">
               <div class="logged-in-header">
                 <h3>Welcome, <span id="staff-name">Staff</span></h3>
@@ -113,7 +122,9 @@
               <div id="service-details" class="service-details" aria-live="polite" style="margin-top:10px">
                 <div class="sd-price">Starting at <strong id="sd-price">$0.00</strong></div>
                 <div class="sd-points" style="margin-top:4px">Earned Points: <strong id="sd-points">0</strong></div>
-                <div class="sd-desc" id="sd-desc" style="margin-top:8px;color:var(--muted);font-size:13px">Select a service to see details.</div>
+                <div class="sd-desc" id="sd-desc" style="margin-top:8px;color:var(--muted);font-size:13px">
+                  Select a service to see details.
+                </div>
 
                 <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
                   <label style="font-size:13px;margin:0">Qty</label>
@@ -123,13 +134,20 @@
 
                 <div id="service-cart" class="service-cart" style="margin-top:12px;display:none">
                   <table class="cart" style="width:100%;border-collapse:collapse">
-                    <thead><tr><th style="text-align:left">Service</th><th style="width:60px">Qty</th><th style="width:90px;text-align:right">Price</th><th style="width:90px;text-align:right">Subtotal</th><th style="width:34px"></th></tr></thead>
+                    <thead>
+                      <tr>
+                        <th style="text-align:left">Service</th>
+                        <th style="width:60px">Qty</th>
+                        <th style="width:90px;text-align:right">Price</th>
+                        <th style="width:90px;text-align:right">Subtotal</th>
+                        <th style="width:34px"></th>
+                      </tr>
+                    </thead>
                     <tbody id="cart-body"></tbody>
                   </table>
                   <div class="cart-total" style="display:flex;justify-content:flex-end;gap:12px;margin-top:8px">
                     <div class="muted">Total: <strong id="cart-total">$0.00</strong></div>
                   </div>
-
                   <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
                     <label style="font-size:13px;margin:0">Tip</label>
                     <input id="appointment-tip" type="number" min="0" step="0.01" value="0.00" style="width:110px;padding:6px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-left:8px">
@@ -141,9 +159,12 @@
                   <div id="paypal-button-container"></div>
                 </div>
 
-                <div style="margin-top:10px"><button type="button" id="sd-book" class="btn">Book Now</button></div>
+                <div style="margin-top:10px">
+                  <button type="button" id="sd-book" class="btn">Book Now</button>
+                </div>
               </div>
             </div>
+
             <div>
               <label class="field">Therapist (optional)</label>
               <select id="therapist-select" name="Therapist">
@@ -151,29 +172,34 @@
               </select>
               <div id="therapist-availability" class="muted" aria-live="polite" style="margin-top:6px;font-size:13px"></div>
 
-             <div id="availability-panel" style="margin-top:10px;display:none" aria-live="polite">
-               <div class="muted" style="font-size:13px;margin-bottom:6px">Available times (click a time to choose therapist & time)</div>
-               <div id="availability-list" style="display:flex;flex-direction:column;gap:8px"></div>
-             </div>
+              <div id="availability-panel" style="margin-top:10px;display:none" aria-live="polite">
+                <div class="muted" style="font-size:13px;margin-bottom:6px">
+                  Available times (click a time to choose therapist &amp; time)
+                </div>
+                <div id="availability-list" style="display:flex;flex-direction:column;gap:8px"></div>
+              </div>
 
-             <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
-               <input type="checkbox" id="use-vagaro" />
-               <label for="use-vagaro" style="font-size:13px;color:var(--muted)">Use live Vagaro availability</label>
-               <button type="button" id="load-vagaro" class="btn small" style="margin-left:auto">Load Vagaro</button>
-               <button type="button" id="import-vagaro" class="btn small" style="margin-left:8px">Import Vagaro selection</button>
-             </div>
-            <div id="vagaro-status" style="margin-top:8px;font-size:13px;color:var(--muted)"></div>
+              <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
+                <input type="checkbox" id="use-vagaro" />
+                <label for="use-vagaro" style="font-size:13px;color:var(--muted)">Use live Vagaro availability</label>
+                <button type="button" id="load-vagaro" class="btn small" style="margin-left:auto">Load Vagaro</button>
+                <button type="button" id="import-vagaro" class="btn small" style="margin-left:8px">Import Vagaro selection</button>
+              </div>
+              <div id="vagaro-status" style="margin-top:8px;font-size:13px;color:var(--muted)"></div>
 
-             <div id="vagaro-wrap" style="margin-top:10px;display:none">
-               <div class="muted" style="font-size:13px;margin-bottom:6px">Vagaro booking widget (live availability). Use the widget to pick a time/therapist.</div>
-               <iframe id="vagaro-iframe" title="Vagaro availability" src="" sandbox="allow-scripts allow-same-origin allow-forms" style="width:100%;height:520px;border:1px solid rgba(0,0,0,0.06);border-radius:8px"></iframe>
-             </div>
+              <div id="vagaro-wrap" style="margin-top:10px;display:none">
+                <div class="muted" style="font-size:13px;margin-bottom:6px">
+                  Vagaro booking widget (live availability). Use the widget to pick a time/therapist.
+                </div>
+                <iframe id="vagaro-iframe" title="Vagaro availability" src="" sandbox="allow-scripts allow-same-origin allow-forms" style="width:100%;height:520px;border:1px solid rgba(0,0,0,0.06);border-radius:8px"></iframe>
+              </div>
             </div>
 
             <div>
               <label class="field">Date</label>
               <input type="date" id="date-input" name="Date" required>
             </div>
+
             <div>
               <label class="field">Time</label>
               <input type="time" name="Time" required>
@@ -183,6 +209,7 @@
               <label class="field">Full name</label>
               <input type="text" name="Name" placeholder="Jane Doe" required>
             </div>
+
             <div>
               <label class="field">Phone</label>
               <input type="tel" name="Phone" placeholder="(555) 123-4567" required>
@@ -207,10 +234,12 @@
         </form>
       </section>
 
-      <!-- Payroll content - Hidden by default -->
-      <section aria-labelledby="pay-title" style="margin-top:18px" class="card" id="payroll-section" style="display:none">
+      <!-- Payroll content - hidden from guests -->
+      <section aria-labelledby="pay-title" class="card" id="payroll-section" style="margin-top:18px;display:none">
         <h2 id="pay-title" style="font-size:16px;margin-bottom:6px">Simple Payroll Sheet</h2>
-        <p class="muted" style="margin:0 0 8px 0">Fill staff rows and submit. This uses email submit so payroll can be saved/emailed quickly.</p>
+        <p class="muted" style="margin:0 0 8px 0">
+          Fill staff rows and submit. This uses email submit so payroll can be saved/emailed quickly.
+        </p>
 
         <form action="mailto:payroll@montrathaimassage.net" method="post" enctype="text/plain" id="payroll-form">
           <div class="actions" style="margin-bottom:8px;align-items:center">
@@ -259,8 +288,10 @@
                 <td class="result"><span class="gross" data-row="1">0.00</span></td>
                 <td class="result"><span class="tax" data-row="1">0.00</span></td>
                 <td class="result"><span class="net" data-row="1">0.00</span></td>
-                <td><input type="text" name="staff1_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
+                <td>
+                  <input type="text" name="staff1_notes" placeholder="OT, tips...">
+                  <button type="button" class="remove-btn" aria-label="Remove row">✕</button>
+                </td>
                 <input type="hidden" name="staff1_gross" class="hidden-gross" data-row="1" value="0.00">
                 <input type="hidden" name="staff1_tax" class="hidden-tax" data-row="1" value="0.00">
                 <input type="hidden" name="staff1_net" class="hidden-net" data-row="1" value="0.00">
@@ -292,8 +323,10 @@
                 <td class="result"><span class="gross" data-row="2">0.00</span></td>
                 <td class="result"><span class="tax" data-row="2">0.00</span></td>
                 <td class="result"><span class="net" data-row="2">0.00</span></td>
-                <td><input type="text" name="staff2_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
+                <td>
+                  <input type="text" name="staff2_notes" placeholder="OT, tips...">
+                  <button type="button" class="remove-btn" aria-label="Remove row">✕</button>
+                </td>
                 <input type="hidden" name="staff2_gross" class="hidden-gross" data-row="2" value="0.00">
                 <input type="hidden" name="staff2_tax" class="hidden-tax" data-row="2" value="0.00">
                 <input type="hidden" name="staff2_net" class="hidden-net" data-row="2" value="0.00">
@@ -325,8 +358,10 @@
                 <td class="result"><span class="gross" data-row="3">0.00</span></td>
                 <td class="result"><span class="tax" data-row="3">0.00</span></td>
                 <td class="result"><span class="net" data-row="3">0.00</span></td>
-                <td><input type="text" name="staff3_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
+                <td>
+                  <input type="text" name="staff3_notes" placeholder="OT, tips...">
+                  <button type="button" class="remove-btn" aria-label="Remove row">✕</button>
+                </td>
                 <input type="hidden" name="staff3_gross" class="hidden-gross" data-row="3" value="0.00">
                 <input type="hidden" name="staff3_tax" class="hidden-tax" data-row="3" value="0.00">
                 <input type="hidden" name="staff3_net" class="hidden-net" data-row="3" value="0.00">
@@ -339,7 +374,6 @@
             <div class="muted">Total Gross: <strong id="total-gross">0.00</strong></div>
             <div class="muted">Total Tax: <strong id="total-tax">0.00</strong></div>
             <div class="muted">Total Net: <strong id="total-net">0.00</strong></div>
-
             <input type="hidden" name="total_gross" id="hidden-total-gross" value="0.00">
             <input type="hidden" name="total_tax" id="hidden-total-tax" value="0.00">
             <input type="hidden" name="total_net" id="hidden-total-net" value="0.00">
@@ -355,40 +389,55 @@
     </div>
   </div>
 
+  <!-- PayPal -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-  
+
+  <!-- Staff auth + gate payroll -->
   <script>
-    // Bolt Database initialization
+    // Supabase setup
     const SUPABASE_URL = 'https://0ec90b57d6e95fcbda19832f.supabase.co';
     const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJib2x0IiwicmVmIjoiMGVjOTBiNTdkNmU5NWZjYmRhMTk4MzJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4ODE1NzQsImV4cCI6MTc1ODg4MTU1NzR9.9I8-U0x86Ak8t2DGaIk0HfvTSLsAyzdnz-Nw00mMkKw';
-    const { createClient } = Bolt Database;
-    const supabaseClient = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-    // Authentication management
+    const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+    let isLoggedIn = false;
+
     (function(){
-      const staffBtn = document.getElementById('staff-btn');
       const staffDropdown = document.getElementById('staff-dropdown');
       const authForm = document.getElementById('auth-form');
       const signupForm = document.getElementById('signup-form');
       const loggedInSection = document.getElementById('logged-in-section');
+
       const loginBtn = document.getElementById('login-btn');
       const signupBtn = document.getElementById('signup-btn');
       const logoutBtn = document.getElementById('logout-btn');
+
       const loginEmail = document.getElementById('login-email');
       const loginPassword = document.getElementById('login-password');
       const signupName = document.getElementById('signup-name');
       const signupEmail = document.getElementById('signup-email');
       const signupPassword = document.getElementById('signup-password');
+
       const loginError = document.getElementById('login-error');
       const signupError = document.getElementById('signup-error');
       const staffName = document.getElementById('staff-name');
+
       const payrollSection = document.getElementById('payroll-section');
       const payrollTabLabel = document.getElementById('payroll-tab-label');
+      const payrollTab = document.getElementById('tab-payroll');
+      const apptTab = document.getElementById('tab-appointment');
+
       const toggleSignup = document.getElementById('toggle-signup');
       const toggleSignin = document.getElementById('toggle-signin');
 
-      // Dropdown toggle
-      staffBtn.addEventListener('click', (e) => {
+      // Hover to open dropdown (CSS also handles this; JS here only closes on touch if needed)
+      const authWrap = document.querySelector('.staff-auth-wrap');
+      authWrap.addEventListener('mouseleave', () => {
+        staffDropdown.classList.remove('active');
+      });
+
+      // Touch/click support: toggle dropdown
+      document.getElementById('staff-btn').addEventListener('click', (e) => {
+        e.preventDefault();
         e.stopPropagation();
         staffDropdown.classList.toggle('active');
       });
@@ -399,7 +448,7 @@
         }
       });
 
-      // Form toggles
+      // Switch between login/signup
       toggleSignup.addEventListener('click', (e) => {
         e.preventDefault();
         authForm.style.display = 'none';
@@ -412,6 +461,35 @@
         authForm.style.display = 'block';
       });
 
+      function showLoggedInUI() {
+        isLoggedIn = true;
+        authForm.style.display = 'none';
+        signupForm.style.display = 'none';
+        loggedInSection.style.display = 'block';
+
+        payrollSection.style.display = 'block';
+        payrollTabLabel.style.opacity = '1';
+        payrollTabLabel.style.cursor = 'pointer';
+
+        loginEmail.value = '';
+        loginPassword.value = '';
+        loginError.textContent = '';
+      }
+
+      function showLoggedOutUI() {
+        isLoggedIn = false;
+        authForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        loggedInSection.style.display = 'none';
+
+        payrollSection.style.display = 'none';
+        payrollTabLabel.style.opacity = '0.5';
+        payrollTabLabel.style.cursor = 'not-allowed';
+
+        // Force appointment tab when logged out
+        apptTab.checked = true;
+      }
+
       // Sign up
       signupBtn.addEventListener('click', async () => {
         const email = signupEmail.value.trim();
@@ -422,7 +500,6 @@
           signupError.textContent = 'Please fill in all fields';
           return;
         }
-
         if (password.length < 6) {
           signupError.textContent = 'Password must be at least 6 characters';
           return;
@@ -467,10 +544,11 @@
           const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
           if (error) throw error;
 
+          const userId = data.user.id;
           const { data: staffData } = await supabaseClient
             .from('staff')
             .select('name')
-            .eq('id', data.user.id)
+            .eq('id', userId)
             .maybeSingle();
 
           staffName.textContent = staffData?.name || 'Staff';
@@ -486,62 +564,42 @@
         showLoggedOutUI();
       });
 
-      function showLoggedInUI() {
-        authForm.style.display = 'none';
-        loggedInSection.style.display = 'block';
-        payrollSection.style.display = 'block';
-        payrollTabLabel.style.opacity = '1';
-        payrollTabLabel.style.cursor = 'pointer';
-        loginEmail.value = '';
-        loginPassword.value = '';
-        loginError.textContent = '';
-      }
-
-      function showLoggedOutUI() {
-        authForm.style.display = 'block';
-        signupForm.style.display = 'none';
-        loggedInSection.style.display = 'none';
-        payrollSection.style.display = 'none';
-        payrollTabLabel.style.opacity = '0.5';
-        payrollTabLabel.style.cursor = 'not-allowed';
-      }
-
-      // Check session on load
-      window.addEventListener('load', async () => {
-        const { data } = await supabaseClient.auth.getSession();
-        if (data.session) {
-          const { data: staffData } = await supabaseClient
-            .from('staff')
-            .select('name')
-            .eq('id', data.session.user.id)
-            .maybeSingle();
-          staffName.textContent = staffData?.name || 'Staff';
-          showLoggedInUI();
-        } else {
-          showLoggedOutUI();
+      // Gate payroll tab (block guests)
+      payrollTab.addEventListener('change', () => {
+        if (payrollTab.checked && !isLoggedIn) {
+          alert('Please sign in as staff to access payroll.');
+          apptTab.checked = true;
         }
       });
 
-      // Prevent payroll tab click if not logged in
-      const payrollTab = document.getElementById('tab-payroll');
-      const payrollCheckHandler = (e) => {
-        const { data } = supabaseClient.auth.getSession();
-        if (!data?.session) {
-          e.preventDefault();
-          alert('Please sign in as staff to access payroll.');
-          payrollTab.checked = false;
-        }
-      };
+      // Check session on load to keep staff logged in between refreshes
+      window.addEventListener('load', async () => {
+        try {
+          const { data } = await supabaseClient.auth.getSession();
+          if (data && data.session) {
+            const userId = data.session.user.id;
+            const { data: staffData } = await supabaseClient
+              .from('staff')
+              .select('name')
+              .eq('id', userId)
+              .maybeSingle();
 
-      payrollTab.addEventListener('change', payrollCheckHandler);
+            staffName.textContent = staffData?.name || 'Staff';
+            showLoggedInUI();
+          } else {
+            showLoggedOutUI();
+          }
+        } catch (e) {
+          showLoggedOutUI();
+        }
+      });
     })();
   </script>
 
-  <!-- Existing payroll calculator script (unchanged) -->
+  <!-- Existing payroll calculator script -->
   <script>
     (function(){
       const fmt = v => Number(v || 0).toFixed(2);
-
       const body = document.getElementById('payroll-body');
       let nextRow = 4;
 
@@ -633,6 +691,7 @@
       });
 
       window.addEventListener('DOMContentLoaded', recalc);
+
       document.getElementById('payroll-reset').addEventListener('click', function(){
         setTimeout(() => {
           Array.from(body.querySelectorAll('tr[data-row]')).forEach(tr => {
@@ -646,7 +705,7 @@
     })();
   </script>
 
-  <!-- Appointment cart + PayPal script (unchanged) -->
+  <!-- Appointment cart + PayPal script -->
   <script>
     (function(){
       const serviceSelect = document.getElementById('service-select');
@@ -660,7 +719,6 @@
       const appointmentTipInput = document.getElementById('appointment-tip');
 
       window.cart = [];
-
       const fmt = v => Number(v||0).toFixed(2);
 
       function renderCart(){
@@ -674,6 +732,7 @@
         }
         cartWrap.style.display = 'block';
         paypalWrap.style.display = 'block';
+
         let total = 0;
         cart.forEach((item, i) => {
           const tr = document.createElement('tr');
@@ -688,6 +747,7 @@
           `;
           cartBody.appendChild(tr);
         });
+
         const tip = Number(appointmentTipInput?.value || 0);
         const grand = total + tip;
         cartTotalEl.textContent = '$' + fmt(grand);
@@ -697,31 +757,70 @@
 
       function syncHiddenFields(){
         Array.from(form.querySelectorAll('input[name^="cart_"]')).forEach(el => el.remove());
+
         let total = 0;
         window.cart.forEach((it, idx) => {
           const base = `cart_${idx}_`;
-          const name = document.createElement('input'); name.type='hidden'; name.name = base + 'name'; name.value = it.name; form.appendChild(name);
-          const price = document.createElement('input'); price.type='hidden'; price.name = base + 'price'; price.value = fmt(it.price); form.appendChild(price);
-          const qty = document.createElement('input'); qty.type='hidden'; qty.name = base + 'qty'; qty.value = it.qty; form.appendChild(qty);
-          const sub = document.createElement('input'); sub.type='hidden'; sub.name = base + 'subtotal'; sub.value = fmt(it.price * it.qty); form.appendChild(sub);
+          const name = document.createElement('input');
+          name.type='hidden';
+          name.name = base + 'name';
+          name.value = it.name;
+          form.appendChild(name);
+
+          const price = document.createElement('input');
+          price.type='hidden';
+          price.name = base + 'price';
+          price.value = fmt(it.price);
+          form.appendChild(price);
+
+          const qty = document.createElement('input');
+          qty.type='hidden';
+          qty.name = base + 'qty';
+          qty.value = it.qty;
+          form.appendChild(qty);
+
+          const sub = document.createElement('input');
+          sub.type='hidden';
+          sub.name = base + 'subtotal';
+          sub.value = fmt(it.price * it.qty);
+          form.appendChild(sub);
+
           total += it.price * it.qty;
         });
+
         let tipEl = form.querySelector('input[name="appointment_tip"]');
-        if(!tipEl){ tipEl = document.createElement('input'); tipEl.type='hidden'; tipEl.name='appointment_tip'; form.appendChild(tipEl); }
+        if(!tipEl){
+          tipEl = document.createElement('input');
+          tipEl.type='hidden';
+          tipEl.name='appointment_tip';
+          form.appendChild(tipEl);
+        }
         tipEl.value = fmt(Number(appointmentTipInput?.value || 0));
+
         let existingTotal = form.querySelector('input[name="appointment_total"]');
-        if(!existingTotal){ existingTotal = document.createElement('input'); existingTotal.type='hidden'; existingTotal.name='appointment_total'; form.appendChild(existingTotal); }
+        if(!existingTotal){
+          existingTotal = document.createElement('input');
+          existingTotal.type='hidden';
+          existingTotal.name='appointment_total';
+          form.appendChild(existingTotal);
+        }
         existingTotal.value = fmt(total);
       }
 
       addBtn.addEventListener('click', () => {
         const opt = serviceSelect.selectedOptions[0];
         if(!opt) return;
+
         const name = opt.textContent;
         const price = Number(opt.getAttribute('data-price') || 0);
         const qty = Math.max(1, Number(qtyInput.value||1));
+
         const existing = window.cart.find(c => c.name === name);
-        if(existing){ existing.qty += qty; } else { window.cart.push({name, price, qty}); }
+        if(existing){
+          existing.qty += qty;
+        } else {
+          window.cart.push({name, price, qty});
+        }
         renderCart();
       });
 
@@ -747,11 +846,23 @@
         onApprove(data, actions){
           return actions.order.capture().then(function(details){
             let pId = form.querySelector('input[name="paypal_order_id"]');
-            if(!pId){ pId = document.createElement('input'); pId.type='hidden'; pId.name='paypal_order_id'; form.appendChild(pId);}
+            if(!pId){
+              pId = document.createElement('input');
+              pId.type='hidden';
+              pId.name='paypal_order_id';
+              form.appendChild(pId);
+            }
             pId.value = details.id || '';
+
             let pStatus = form.querySelector('input[name="paypal_status"]');
-            if(!pStatus){ pStatus = document.createElement('input'); pStatus.type='hidden'; pStatus.name='paypal_status'; form.appendChild(pStatus);}
+            if(!pStatus){
+              pStatus = document.createElement('input');
+              pStatus.type='hidden';
+              pStatus.name='paypal_status';
+              form.appendChild(pStatus);
+            }
             pStatus.value = details.status || '';
+
             setTimeout(()=> form.submit(), 200);
           });
         },
@@ -769,20 +880,19 @@
     })();
   </script>
 
-  <!-- Therapist availability script (unchanged) -->
+  <!-- Therapist availability script -->
   <script>
     (function(){
       const therapists = ["Vicky","Amy","Lani","Sherry","Lynn"];
       const scheduleByDate = {
         "2025-11-26": {
           "Vicky": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
-          "Amy":   ["18:00","18:15","18:45","19:00","19:15"],
-          "Lani":  ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
+          "Amy": ["18:00","18:15","18:45","19:00","19:15"],
+          "Lani": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
           "Sherry": [],
-          "Lynn":   []
+          "Lynn": []
         }
       };
-
       const scheduleByWeekday = {
         "Mon": {
           "Vicky": ["16:30","16:45","17:00","17:15"],
@@ -792,8 +902,8 @@
         "Tue": {},
         "Wed": {
           "Vicky": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
-          "Amy":   ["18:00","18:15","18:45","19:00","19:15"],
-          "Lani":  ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"]
+          "Amy": ["18:00","18:15","18:45","19:00","19:15"],
+          "Lani": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"]
         },
         "Thu": {},
         "Fri": {},
@@ -812,9 +922,12 @@
 
       const allTherapists = therapists;
       const serviceMap = {};
+
       document.addEventListener('DOMContentLoaded', () => {
         const s = document.getElementById('service-select');
-        if(s) Array.from(s.options).forEach(opt => { serviceMap[opt.value] = [...allTherapists]; });
+        if(s) Array.from(s.options).forEach(opt => {
+          serviceMap[opt.value] = [...allTherapists];
+        });
       });
 
       const serviceEl = document.getElementById('service-select');
@@ -824,8 +937,6 @@
       const sdPrice = document.getElementById('sd-price');
       const sdPoints = document.getElementById('sd-points');
       const sdDesc = document.getElementById('sd-desc');
-      const sdBook = document.getElementById('sd-book');
-
       const availPanel = document.getElementById('availability-panel');
       const availList = document.getElementById('availability-list');
 
@@ -850,25 +961,30 @@
         }
         const dateSchedule = getAvailableSchedule(dateStr) || {};
         let any = false;
+
         therapists.forEach(name => {
           const times = dateSchedule[name] || [];
           const svc = serviceEl.value;
           const allowed = (serviceMap[svc] || []).includes(name);
           if(!allowed) return;
+
           const row = document.createElement('div');
           row.style.display = 'flex';
           row.style.alignItems = 'flex-start';
           row.style.gap = '10px';
           row.style.flexWrap = 'wrap';
+
           const h = document.createElement('div');
           h.style.minWidth = '90px';
           h.style.fontWeight = 700;
           h.textContent = name;
           row.appendChild(h);
+
           const timesWrap = document.createElement('div');
           timesWrap.style.display = 'flex';
           timesWrap.style.flexWrap = 'wrap';
           timesWrap.style.gap = '6px';
+
           if(times.length === 0){
             const none = document.createElement('div');
             none.className = 'muted';
@@ -899,9 +1015,11 @@
               timesWrap.appendChild(btn);
             });
           }
+
           row.appendChild(timesWrap);
           availList.appendChild(row);
         });
+
         availPanel.style.display = any ? 'block' : 'none';
       }
 
@@ -909,8 +1027,8 @@
         const service = serviceEl.value;
         const dateVal = dateEl.value;
         const date = dateVal ? new Date(dateVal + 'T00:00:00') : null;
-        let list = serviceMap[service] ? [...serviceMap[service]] : [];
 
+        let list = serviceMap[service] ? [...serviceMap[service]] : [];
         if(date){
           list = list.filter(name => {
             const rule = ({"Lani": d => d && (d.getDay() === 0 || d.getDay() === 6)})[name];
@@ -946,9 +1064,9 @@
           const price = opt.getAttribute('data-price') || '0.00';
           const points = opt.getAttribute('data-points') || '0';
           const desc = opt.getAttribute('data-desc') || '';
-          document.getElementById('sd-price').textContent = '$' + Number(price).toFixed(2);
-          document.getElementById('sd-points').textContent = points;
-          document.getElementById('sd-desc').textContent = desc;
+          sdPrice.textContent = '$' + Number(price).toFixed(2);
+          sdPoints.textContent = points;
+          sdDesc.textContent = desc;
         }
 
         const isoDate = dateEl.value;
@@ -966,14 +1084,26 @@
         }
       });
 
-      const useVagaroCheckbox = document.getElementById('use-vagaro');
       const loadVagaroBtn = document.getElementById('load-vagaro');
       const vagaroWrap = document.getElementById('vagaro-wrap');
       const vagaroIframe = document.getElementById('vagaro-iframe');
       const importVagaroBtn = document.getElementById('import-vagaro');
       const vagaroStatus = document.getElementById('vagaro-status');
-
       const VAGARO_WIDGET_URL = "https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVM4SakI1KjE3knRkP3ywpWVXk0IjFrFOrvdEdsZ/CVa7nEj6MRQuAwfBBGT5tOpfUYvKjmzdwCZhUVBSZgZ04zg5ODJm5RfAQvgigpMCzk85F500OkxY7h72LHqdhM0GKaslwm/63uDPVtlwPtiq0zxGfszkWkfL5W+J0D0EkvUeW14OtUdj8jJb5pybomIa3DUm18bl1nmoOtPVAdZ9ZJ5RdQHGeGZ1NWgQ+x9CqA/rxUWUoOLarHcF9qDm59aYGdKtT6r2+2Q2Z47D7SKuVTOMtAlCe3Niqc+vnHiObhEj4TzIrL8I0rNYX57wQIXRJaZ4Mb8dCHqXiu3w9R+nwhYvGA0C6rrJlSUk8ux5ZZgMQOCqw7vFr4LJh87bywl163VTQNGhFwev0M1AzkmQIjFivS0DfLpuM66KyICq9pPzBPQncS7AAPIVi848mlEadg==";
+
+      loadVagaroBtn.addEventListener('click', () => {
+        vagaroIframe.src = VAGARO_WIDGET_URL;
+        vagaroWrap.style.display = 'block';
+        vagaroStatus.textContent = 'Vagaro widget loaded below.';
+      });
+
+      importVagaroBtn.addEventListener('click', () => {
+        vagaroStatus.textContent = 'Please copy your chosen time/therapist from the Vagaro widget manually into the form.';
+      });
+
+      window.addEventListener('DOMContentLoaded', () => {
+        updateTherapists();
+      });
     })();
   </script>
 </body>
