@@ -4,9 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>MontraThai — Quick Appointment & Payroll</title>
-<!-- added font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles/Project4340.css">
+<link rel="stylesheet" href="montrathai.css">
 </head>
 <body>
   <div class="wrap" role="main">
@@ -16,9 +15,28 @@
         <h1>MontraThai — Quick Booking & Payroll</h1>
         <p class="lead">Fast one-page appointment form and simple payroll sheet. Designed to minimize clicks.</p>
       </div>
+      <div class="staff-login-container">
+        <button class="staff-login-btn">Staff Login</button>
+        <div class="staff-login-dropdown">
+          <form class="dropdown-form" id="login-form">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="Enter username" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="off">
+            </div>
+            <div class="dropdown-buttons">
+              <button type="button" class="btn-login" id="btn-submit-login">Sign In</button>
+              <button type="button" class="btn-signout" id="btn-signout">Sign Out</button>
+            </div>
+          </form>
+          <div class="login-message" id="login-message">Logged in as Staff</div>
+        </div>
+      </div>
     </header>
 
-    <!-- CSS-only tabs -->
     <input type="radio" id="tab-appointment" name="tab" checked>
     <input type="radio" id="tab-payroll" name="tab">
     <div class="tabs-labels">
@@ -29,11 +47,9 @@
     </div>
 
     <div class="tab-content">
-      <!-- Appointment content -->
       <section aria-labelledby="appt-title" class="card">
         <h2 id="appt-title" style="margin-top:0;font-size:16px">Quick Appointment</h2>
 
-        <!-- optional thumbnails: drop provided images into images/ as spa1.jpg, spa2.jpg, spa3.jpg -->
         <div class="thumbs" aria-hidden="true">
           <img src="https://static.wixstatic.com/media/11062b_f78c3007472047b7991f8740148aebd0~mv2.jpeg/v1/fill/w_190,h_258,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Luxury%20Spa.jpeg" alt="">
           <img src="https://static.wixstatic.com/media/11062b_bead31d3b8dd46358d4d4df83a3d3720~mv2.jpeg/v1/fill/w_320,h_258,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Shoulder%20Massage.jpeg" alt="">
@@ -62,7 +78,6 @@
                 <option value="Hot Stone - 75 min" data-price="100.00" data-points="1" data-desc="Hot stone therapy to soothe muscles and promote deep relaxation">Hot Stone - 75 min — $100</option>
               </select>
 
-              <!-- service details panel -->
               <div id="service-details" class="service-details" aria-live="polite" style="margin-top:10px">
                 <div class="sd-price">Starting at <strong id="sd-price">$0.00</strong></div>
                 <div class="sd-points" style="margin-top:4px">Earned Points: <strong id="sd-points">0</strong></div>
@@ -74,7 +89,6 @@
                   <button type="button" id="add-service" class="btn small" style="margin-left:auto">Add Service</button>
                 </div>
 
-                <!-- cart -->
                 <div id="service-cart" class="service-cart" style="margin-top:12px;display:none">
                   <table class="cart" style="width:100%;border-collapse:collapse">
                     <thead><tr><th style="text-align:left">Service</th><th style="width:60px">Qty</th><th style="width:90px;text-align:right">Price</th><th style="width:90px;text-align:right">Subtotal</th><th style="width:34px"></th></tr></thead>
@@ -84,7 +98,6 @@
                     <div class="muted">Total: <strong id="cart-total">$0.00</strong></div>
                   </div>
 
-                  <!-- appointment-wide tip for cart (syncs to payroll) -->
                   <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
                     <label style="font-size:13px;margin:0">Tip</label>
                     <input id="appointment-tip" type="number" min="0" step="0.01" value="0.00" style="width:110px;padding:6px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-left:8px">
@@ -103,17 +116,14 @@
               <label class="field">Therapist (optional)</label>
               <select id="therapist-select" name="Therapist">
                 <option value="">Any</option>
-                <!-- therapist options are populated automatically -->
               </select>
               <div id="therapist-availability" class="muted" aria-live="polite" style="margin-top:6px;font-size:13px"></div>
 
-             <!-- Availability panel: lists therapists and clickable times -->
              <div id="availability-panel" style="margin-top:10px;display:none" aria-live="polite">
                <div class="muted" style="font-size:13px;margin-bottom:6px">Available times (click a time to choose therapist & time)</div>
                <div id="availability-list" style="display:flex;flex-direction:column;gap:8px"></div>
              </div>
 
-             <!-- External availability controls -->
              <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
                <input type="checkbox" id="use-vagaro" />
                <label for="use-vagaro" style="font-size:13px;color:var(--muted)">Use live Square availability</label>
@@ -122,7 +132,6 @@
              </div>
              <div id="vagaro-status" style="margin-top:8px;font-size:13px;color:var(--muted)"></div>
 
-             <!-- Vagaro iframe container (loaded on demand) -->
              <div id="vagaro-wrap" style="margin-top:10px;display:none">
                <div class="muted" style="font-size:13px;margin-bottom:6px">square booking widget (live availability). Use the widget to pick a time/therapist.</div>
                <iframe id="vagaro-iframe" title="Vagaro availability" src="" sandbox="allow-scripts allow-same-origin allow-forms" style="width:100%;height:520px;border:1px solid rgba(0,0,0,0.06);border-radius:8px"></iframe>
@@ -166,20 +175,17 @@
         </form>
       </section>
 
-      <!-- Payroll content -->
       <section aria-labelledby="pay-title" style="margin-top:18px" class="card">
         <h2 id="pay-title" style="font-size:16px;margin-bottom:6px">Simple Payroll Sheet</h2>
         <p class="muted" style="margin:0 0 8px 0">Fill staff rows and submit. This uses email submit so payroll can be saved/emailed quickly.</p>
 
         <form action="mailto:payroll@montrathaimassage.net" method="post" enctype="text/plain" id="payroll-form">
-          <!-- Tax rate control -->
           <div class="actions" style="margin-bottom:8px;align-items:center">
             <label class="field" style="margin:0 8px 0 0">Tax rate (%)</label>
             <input type="number" id="tax-rate" name="tax_rate_percent" value="10" min="0" step="0.01" style="width:90px;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
             <div class="muted" style="margin-left:auto;font-size:13px">Values update live — totals included in email</div>
           </div>
 
-          <!-- extended payroll table: Tips + visible Gross + computed columns -->
           <table class="pay" aria-describedby="pay-desc">
             <thead>
               <tr>
@@ -221,8 +227,6 @@
                 <td class="result"><span class="tax" data-row="1">0.00</span></td>
                 <td class="result"><span class="net" data-row="1">0.00</span></td>
                 <td><input type="text" name="staff1_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
-                <!-- hidden computed fields for email submit -->
                 <input type="hidden" name="staff1_gross" class="hidden-gross" data-row="1" value="0.00">
                 <input type="hidden" name="staff1_tax" class="hidden-tax" data-row="1" value="0.00">
                 <input type="hidden" name="staff1_net" class="hidden-net" data-row="1" value="0.00">
@@ -255,7 +259,6 @@
                 <td class="result"><span class="tax" data-row="2">0.00</span></td>
                 <td class="result"><span class="net" data-row="2">0.00</span></td>
                 <td><input type="text" name="staff2_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
                 <input type="hidden" name="staff2_gross" class="hidden-gross" data-row="2" value="0.00">
                 <input type="hidden" name="staff2_tax" class="hidden-tax" data-row="2" value="0.00">
                 <input type="hidden" name="staff2_net" class="hidden-net" data-row="2" value="0.00">
@@ -288,7 +291,6 @@
                 <td class="result"><span class="tax" data-row="3">0.00</span></td>
                 <td class="result"><span class="net" data-row="3">0.00</span></td>
                 <td><input type="text" name="staff3_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-
                 <input type="hidden" name="staff3_gross" class="hidden-gross" data-row="3" value="0.00">
                 <input type="hidden" name="staff3_tax" class="hidden-tax" data-row="3" value="0.00">
                 <input type="hidden" name="staff3_net" class="hidden-net" data-row="3" value="0.00">
@@ -296,13 +298,11 @@
             </tbody>
           </table>
 
-          <!-- controls and totals -->
           <div class="summary" style="display:flex;gap:12px;align-items:center;margin-top:10px">
             <button type="button" id="add-staff" class="btn small">+ Add Staff</button>
             <div class="muted">Total Gross: <strong id="total-gross">0.00</strong></div>
             <div class="muted">Total Tax: <strong id="total-tax">0.00</strong></div>
             <div class="muted">Total Net: <strong id="total-net">0.00</strong></div>
-
             <input type="hidden" name="total_gross" id="hidden-total-gross" value="0.00">
             <input type="hidden" name="total_tax" id="hidden-total-tax" value="0.00">
             <input type="hidden" name="total_net" id="hidden-total-net" value="0.00">
@@ -318,11 +318,10 @@
     </div>
   </div>
 
-  <!-- payroll calculator script (replaced) -->
+  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
   <script>
     (function(){
       const fmt = v => Number(v || 0).toFixed(2);
-
       const body = document.getElementById('payroll-body');
       let nextRow = 4;
 
@@ -427,7 +426,6 @@
     })();
   </script>
 
-  <!-- appointment cart + PayPal script -->
   <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
   <script>
     (function(){
@@ -442,7 +440,6 @@
       const appointmentTipInput = document.getElementById('appointment-tip');
 
       window.cart = [];
-
       const fmt = v => Number(v||0).toFixed(2);
 
       function renderCart(){
@@ -551,7 +548,6 @@
     })();
   </script>
 
-  <!-- therapist availability & service details script (REPLACED) -->
   <script>
     (function(){
       const therapists = ["Vicky","Amy","Lani","Sherry","Lynn"];
@@ -603,11 +599,6 @@
       const dateEl = document.getElementById('date-input');
       const therapistEl = document.getElementById('therapist-select');
       const statusEl = document.getElementById('therapist-availability');
-      const sdPrice = document.getElementById('sd-price');
-      const sdPoints = document.getElementById('sd-points');
-      const sdDesc = document.getElementById('sd-desc');
-      const sdBook = document.getElementById('sd-book');
-
       const availPanel = document.getElementById('availability-panel');
       const availList = document.getElementById('availability-list');
 
@@ -748,7 +739,6 @@
         }
       });
 
-      const useVagaroCheckbox = document.getElementById('use-vagaro');
       const loadVagaroBtn = document.getElementById('load-vagaro');
       const vagaroWrap = document.getElementById('vagaro-wrap');
       const vagaroIframe = document.getElementById('vagaro-iframe');
@@ -771,35 +761,49 @@
     })();
   </script>
 
-  <!-- Staff Login Script -->
   <script>
   (function(){
     const STAFF_USERNAME = 'MontraThaiStaff';
     const STAFF_PASSWORD = 'Massage2025$';
-    
+
     const payrollTab = document.querySelector('input#tab-payroll');
     const payrollLabel = document.querySelector('label[for="tab-payroll"]');
-    
+    const container = document.querySelector('.staff-login-container');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+    const submitBtn = document.getElementById('btn-submit-login');
+    const signoutBtn = document.getElementById('btn-signout');
+
     const isLoggedIn = sessionStorage.getItem('staffLoggedIn') === 'true';
-    
+
     function showPayroll() {
       payrollLabel.style.display = 'block';
       payrollTab.disabled = false;
       sessionStorage.setItem('staffLoggedIn', 'true');
+      container.classList.add('logged-in');
     }
-    
+
     function hidePayroll() {
       payrollLabel.style.display = 'none';
       payrollTab.disabled = true;
       payrollTab.checked = false;
       document.getElementById('tab-appointment').checked = true;
+      sessionStorage.removeItem('staffLoggedIn');
+      container.classList.remove('logged-in');
+      usernameInput.value = '';
+      passwordInput.value = '';
     }
-    
-    function showLoginPrompt() {
-      const username = prompt('Staff Login - Username:');
-      if (!username) return;
-      
-      const password = prompt('Password:');
+
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const username = usernameInput.value.trim();
+      const password = passwordInput.value.trim();
+
+      if (!username || !password) {
+        alert('Please enter both username and password.');
+        return;
+      }
+
       if (username === STAFF_USERNAME && password === STAFF_PASSWORD) {
         showPayroll();
         alert('Login successful! Payroll tab is now available.');
@@ -807,19 +811,18 @@
         alert('Invalid credentials. Access denied.');
         hidePayroll();
       }
-    }
-    
+    });
+
+    signoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      hidePayroll();
+      alert('You have been signed out.');
+    });
+
     if (isLoggedIn) {
       showPayroll();
     } else {
       hidePayroll();
-      
-      const loginBtn = document.createElement('button');
-      loginBtn.textContent = 'Staff Login';
-      loginBtn.className = 'btn small';
-      loginBtn.style.marginLeft = 'auto';
-      loginBtn.onclick = showLoginPrompt;
-      document.querySelector('header').appendChild(loginBtn);
     }
   })();
   </script>
