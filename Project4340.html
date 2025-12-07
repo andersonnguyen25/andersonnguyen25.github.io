@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>MontraThai — Quick Appointment & Payroll</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="montrathai.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MontraThai — Quick Appointment & Payroll</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="montrathai.css">
 </head>
 <body>
   <div class="wrap" role="main">
@@ -37,6 +37,7 @@
       </div>
     </header>
 
+    <!-- Tabs -->
     <input type="radio" id="tab-appointment" name="tab" checked>
     <input type="radio" id="tab-payroll" name="tab">
     <div class="tabs-labels">
@@ -46,14 +47,14 @@
       </div>
     </div>
 
+    <!-- Appointment Section -->
     <div class="tab-content">
       <section aria-labelledby="appt-title" class="card">
-        <h2 id="appt-title" style="margin-top:0;font-size:16px">Quick Appointment</h2>
-
+        <h2 id="appt-title">Quick Appointment</h2>
         <div class="thumbs" aria-hidden="true">
-          <img src="https://static.wixstatic.com/media/11062b_f78c3007472047b7991f8740148aebd0~mv2.jpeg/v1/fill/w_190,h_258,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Luxury%20Spa.jpeg" alt="">
-          <img src="https://static.wixstatic.com/media/11062b_bead31d3b8dd46358d4d4df83a3d3720~mv2.jpeg/v1/fill/w_320,h_258,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Shoulder%20Massage.jpeg" alt="">
-          <img src="https://static.wixstatic.com/media/11062b_bb85efd759a14500b26eb128a03fdc07~mv2_d_7360_4912_s_4_2.jpg/v1/fill/w_195,h_258,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hot%20Stone%20Massage.jpg" alt="">
+          <img src="https://static.wixstatic.com/media/11062b_f78c3007472047b7991f8740148aebd0~mv2.jpeg/v1/fill/w_190,h_258,al_c,q_80/Luxury%20Spa.jpeg" alt="">
+          <img src="https://static.wixstatic.com/media/11062b_bead31d3b8dd46358d4d4df83a3d3720~mv2.jpeg/v1/fill/w_320,h_258,al_c,q_80/Shoulder%20Massage.jpeg" alt="">
+          <img src="https://static.wixstatic.com/media/11062b_bb85efd759a14500b26eb128a03fdc07~mv2_d_7360_4912_s_4_2.jpg/v1/fill/w_195,h_258,al_c,q_80/Hot%20Stone%20Massage.jpg" alt="">
         </div>
 
         <form action="mailto:info@montrathaimassage.net" method="post" enctype="text/plain">
@@ -61,771 +62,77 @@
             <div>
               <label class="field">Service</label>
               <select id="service-select" name="Service" required>
-                <option value="Regular Massage - 40 Mins" data-price="60.00" data-points="0" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Regular Massage - 40 Mins — $60</option>
-                <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 1 hr" data-price="80.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Thai/Swedish/Combo/Deep Tissue/Prenatal - 1 hr — $80</option>
-                <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 75 Mins" data-price="100.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 75 Mins — $100</option>
-                <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 90 Mins" data-price="120.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 90 Mins — $120</option>
-                <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 2 hr" data-price="150.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 2 hr — $150</option>
-                <option value="Couples Massage - 1 hr" data-price="150.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage bundle, featuring two one-hour massages designed to rejuvenate both body and mind.">Couples Massage - 1 hr — $150</option>
-                <option value="Couples Massage - 75 min" data-price="200.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage, a 75-minute session designed to rejuvenate both body and mind.">Couples Massage - 75 min — $200</option>
-                <option value="Couples Massage - 90 min" data-price="240.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, offering a rejuvenating 90-minute session.">Couples Massage - 90 min — $240</option>
-                <option value="Couples Massage - 2 hrs" data-price="300.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, designed to rejuvenate both body and mind over a two-hour session.">Couples Massage - 2 hrs — $300</option>
-                <option value="Deep Tissue - 1 hr" data-price="80.00" data-points="1" data-desc="Deep tissue techniques to release chronic tension">Deep Tissue - 1 hr — $80</option>
-                <option value="Swedish - 1 hr" data-price="80.00" data-points="1" data-desc="Gentle, relaxing Swedish massage using long gliding strokes">Swedish - 1 hr — $80</option>
-                <option value="Foot Massage - 30 min" data-price="40.00" data-points="0" data-desc="Reflexology and foot care">Foot Massage - 30 min — $40</option>
-                <option value="Foot Massage - 45 min" data-price="60.00" data-points="0" data-desc="Extended foot work and calf massage">Foot Massage - 45 min — $60</option>
-                <option value="Prenatal - 60 min" data-price="80.00" data-points="1" data-desc="Gentle prenatal massage adapted for expectant mothers">Prenatal - 60 min — $80</option>
-                <option value="Hot Stone - 75 min" data-price="100.00" data-points="1" data-desc="Hot stone therapy to soothe muscles and promote deep relaxation">Hot Stone - 75 min — $100</option>
+                <option value="Regular Massage - 40 Mins" data-price="60.00">Regular Massage - 40 Mins — $60</option>
+                <option value="Thai Massage - 1 hr" data-price="80.00">Thai Massage - 1 hr — $80</option>
+                <option value="Couples Massage - 90 min" data-price="240.00">Couples Massage - 90 min — $240</option>
               </select>
 
-              <div id="service-details" class="service-details" aria-live="polite" style="margin-top:10px">
+              <div id="service-details" class="service-details">
                 <div class="sd-price">Starting at <strong id="sd-price">$0.00</strong></div>
-                <div class="sd-points" style="margin-top:4px">Earned Points: <strong id="sd-points">0</strong></div>
-                <div class="sd-desc" id="sd-desc" style="margin-top:8px;color:var(--muted);font-size:13px">Select a service to see details.</div>
+                <div class="sd-points">Earned Points: <strong id="sd-points">0</strong></div>
+                <div class="sd-desc" id="sd-desc">Select a service to see details.</div>
 
-                <div style="display:flex;gap:8px;margin-top:8px;align-items:center">
-                  <label style="font-size:13px;margin:0">Qty</label>
-                  <input id="srv-qty" type="number" min="1" value="1" style="width:70px;padding:6px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
-                  <button type="button" id="add-service" class="btn small" style="margin-left:auto">Add Service</button>
+                <div class="actions">
+                  <label>Qty</label>
+                  <input id="srv-qty" type="number" min="1" value="1">
+                  <button type="button" id="add-service" class="btn small">Add Service</button>
                 </div>
 
-                <div id="service-cart" class="service-cart" style="margin-top:12px;display:none">
-                  <table class="cart" style="width:100%;border-collapse:collapse">
-                    <thead><tr><th style="text-align:left">Service</th><th style="width:60px">Qty</th><th style="width:90px;text-align:right">Price</th><th style="width:90px;text-align:right">Subtotal</th><th style="width:34px"></th></tr></thead>
+                <div id="service-cart" class="service-cart">
+                  <table class="cart">
+                    <thead><tr><th>Service</th><th>Qty</th><th>Price</th><th>Subtotal</th></tr></thead>
                     <tbody id="cart-body"></tbody>
                   </table>
-                  <div class="cart-total" style="display:flex;justify-content:flex-end;gap:12px;margin-top:8px">
-                    <div class="muted">Total: <strong id="cart-total">$0.00</strong></div>
-                  </div>
-
-                  <div style="display:flex;gap:8px;align-items:center;margin-top:8px">
-                    <label style="font-size:13px;margin:0">Tip</label>
-                    <input id="appointment-tip" type="number" min="0" step="0.01" value="0.00" style="width:110px;padding:6px;border-radius:8px;border:1px solid rgba(15,23,42,0.06);margin-left:8px">
-                    <div class="muted" style="margin-left:auto;font-size:13px">Tip will be included in payroll sync</div>
-                  </div>
+                  <div class="cart-total">Total: <strong id="cart-total">$0.00</strong></div>
                 </div>
 
-                <div style="margin-top:12px" id="paypal-wrap" class="paypal-wrap">
-                  <div id="paypal-button-container"></div>
+                <div class="actions">
+                  <button type="button" id="sd-book" class="btn">Book Now</button>
                 </div>
-
-                <div style="margin-top:10px"><button type="button" id="sd-book" class="btn">Book Now</button></div>
               </div>
-            </div>
-            <div>
-              <label class="field">Therapist (optional)</label>
-              <select id="therapist-select" name="Therapist">
-                <option value="">Any</option>
-              </select>
-              <div id="therapist-availability" class="muted" aria-live="polite" style="margin-top:6px;font-size:13px"></div>
-
-             <div id="availability-panel" style="margin-top:10px;display:none" aria-live="polite">
-               <div class="muted" style="font-size:13px;margin-bottom:6px">Available times (click a time to choose therapist & time)</div>
-               <div id="availability-list" style="display:flex;flex-direction:column;gap:8px"></div>
-             </div>
-
-             <div style="margin-top:8px;display:flex;gap:8px;align-items:center">
-               <input type="checkbox" id="use-vagaro" />
-               <label for="use-vagaro" style="font-size:13px;color:var(--muted)">Use live Square availability</label>
-               <button type="button" id="load-vagaro" class="btn small" style="margin-left:auto">Load Square</button>
-               <button type="button" id="import-vagaro" class="btn small" style="margin-left:8px">Import Square selection</button>
-             </div>
-             <div id="vagaro-status" style="margin-top:8px;font-size:13px;color:var(--muted)"></div>
-
-             <div id="vagaro-wrap" style="margin-top:10px;display:none">
-               <div class="muted" style="font-size:13px;margin-bottom:6px">square booking widget (live availability). Use the widget to pick a time/therapist.</div>
-               <iframe id="vagaro-iframe" title="Vagaro availability" src="" sandbox="allow-scripts allow-same-origin allow-forms" style="width:100%;height:520px;border:1px solid rgba(0,0,0,0.06);border-radius:8px"></iframe>
-             </div>
-            </div>
-
-            <div>
-              <label class="field">Date</label>
-              <input type="date" id="date-input" name="Date" required>
-            </div>
-            <div>
-              <label class="field">Time</label>
-              <input type="time" name="Time" required>
-            </div>
-
-            <div>
-              <label class="field">Full name</label>
-              <input type="text" name="Name" placeholder="Jane Doe" required>
-            </div>
-            <div>
-              <label class="field">Phone</label>
-              <input type="tel" name="Phone" placeholder="(555) 123-4567" required>
-            </div>
-
-            <div class="full">
-              <label class="field">Email</label>
-              <input type="email" name="Email" placeholder="you@example.com">
-            </div>
-
-            <div class="full">
-              <label class="field">Notes / Requests</label>
-              <textarea name="Notes" placeholder="Any preferences, allergies, or notes..."></textarea>
-            </div>
-
-            <div class="full actions">
-              <button class="btn" type="submit">Send Booking (one click)</button>
-              <button class="btn secondary" type="reset">Clear</button>
-              <div class="muted" style="margin-left:auto">Or call: (832-541-7746)</div>
             </div>
           </div>
         </form>
       </section>
 
-      <section aria-labelledby="pay-title" style="margin-top:18px" class="card">
-        <h2 id="pay-title" style="font-size:16px;margin-bottom:6px">Simple Payroll Sheet</h2>
-        <p class="muted" style="margin:0 0 8px 0">Fill staff rows and submit. This uses email submit so payroll can be saved/emailed quickly.</p>
-
+      <!-- Payroll Section -->
+      <section aria-labelledby="pay-title" class="card">
+        <h2 id="pay-title">Simple Payroll Sheet</h2>
         <form action="mailto:payroll@montrathaimassage.net" method="post" enctype="text/plain" id="payroll-form">
-          <div class="actions" style="margin-bottom:8px;align-items:center">
-            <label class="field" style="margin:0 8px 0 0">Tax rate (%)</label>
-            <input type="number" id="tax-rate" name="tax_rate_percent" value="10" min="0" step="0.01" style="width:90px;padding:8px;border-radius:8px;border:1px solid rgba(15,23,42,0.06)">
-            <div class="muted" style="margin-left:auto;font-size:13px">Values update live — totals included in email</div>
+          <div class="actions">
+            <label class="field">Tax rate (%)</label>
+            <input type="number" id="tax-rate" name="tax_rate_percent" value="10" min="0" step="0.01">
           </div>
-
-          <table class="pay" aria-describedby="pay-desc">
+          <table class="pay">
             <thead>
               <tr>
-                <th style="width:22%">Staff Name</th>
-                <th style="width:18%">Service</th>
-                <th style="width:8%">Qty</th>
-                <th style="width:10%">Tips</th>
-                <th style="width:12%">Gross</th>
-                <th style="width:12%">Tax</th>
-                <th style="width:12%">Net</th>
-                <th style="width:12%">Notes</th>
+                <th>Staff Name</th><th>Service</th><th>Qty</th><th>Tips</th><th>Gross</th><th>Tax</th><th>Net</th>
               </tr>
             </thead>
             <tbody id="payroll-body">
               <tr data-row="1">
                 <td><input type="text" name="staff1_name" placeholder="Name"></td>
-                <td>
-                  <select name="staff1_service" class="srv">
-                    <option value="Regular Massage - 40 Mins" data-price="60.00" data-points="0" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Regular Massage - 40 Mins — $60</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 1 hr" data-price="80.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Thai/Swedish/Combo/Deep Tissue/Prenatal - 1 hr — $80</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 75 Mins" data-price="100.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 75 Mins — $100</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 90 Mins" data-price="120.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 90 Mins — $120</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 2 hr" data-price="150.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 2 hr — $150</option>
-                    <option value="Couples Massage - 1 hr" data-price="150.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage bundle, featuring two one-hour massages designed to rejuvenate both body and mind.">Couples Massage - 1 hr — $150</option>
-                    <option value="Couples Massage - 75 min" data-price="200.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage, a 75-minute session designed to rejuvenate both body and mind.">Couples Massage - 75 min — $200</option>
-                    <option value="Couples Massage - 90 min" data-price="240.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, offering a rejuvenating 90-minute session.">Couples Massage - 90 min — $240</option>
-                    <option value="Couples Massage - 2 hrs" data-price="300.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, designed to rejuvenate both body and mind over a two-hour session.">Couples Massage - 2 hrs — $300</option>
-                    <option value="Deep Tissue - 1 hr" data-price="80.00" data-points="1" data-desc="Deep tissue techniques to release chronic tension">Deep Tissue - 1 hr — $80</option>
-                    <option value="Swedish - 1 hr" data-price="80.00" data-points="1" data-desc="Gentle, relaxing Swedish massage using long gliding strokes">Swedish - 1 hr — $80</option>
-                    <option value="Foot Massage - 30 min" data-price="40.00" data-points="0" data-desc="Reflexology and foot care">Foot Massage - 30 min — $40</option>
-                    <option value="Foot Massage - 45 min" data-price="60.00" data-points="0" data-desc="Extended foot work and calf massage">Foot Massage - 45 min — $60</option>
-                    <option value="Prenatal - 60 min" data-price="80.00" data-points="1" data-desc="Gentle prenatal massage adapted for expectant mothers">Prenatal - 60 min — $80</option>
-                    <option value="Hot Stone - 75 min" data-price="100.00" data-points="1" data-desc="Hot stone therapy to soothe muscles and promote deep relaxation">Hot Stone - 75 min — $100</option>
-                  </select>
-                </td>
-                <td><input type="number" name="staff1_qty" class="qty" step="1" min="1" value="1"></td>
-                <td><input type="number" name="staff1_tips" class="tips" step="0.01" placeholder="0.00"></td>
+                <td><select name="staff1_service" class="srv"><option value="Massage" data-price="60.00">Massage — $60</option></select></td>
+                <td><input type="number" name="staff1_qty" class="qty" value="1"></td>
+                <td><input type="number" name="staff1_tips" class="tips" placeholder="0.00"></td>
                 <td class="result"><span class="gross" data-row="1">0.00</span></td>
                 <td class="result"><span class="tax" data-row="1">0.00</span></td>
                 <td class="result"><span class="net" data-row="1">0.00</span></td>
-                <td><input type="text" name="staff1_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-                <input type="hidden" name="staff1_gross" class="hidden-gross" data-row="1" value="0.00">
-                <input type="hidden" name="staff1_tax" class="hidden-tax" data-row="1" value="0.00">
-                <input type="hidden" name="staff1_net" class="hidden-net" data-row="1" value="0.00">
-              </tr>
-
-              <tr data-row="2">
-                <td><input type="text" name="staff2_name" placeholder="Name"></td>
-                <td>
-                  <select name="staff2_service" class="srv">
-                    <option value="Regular Massage - 40 Mins" data-price="60.00" data-points="0" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Regular Massage - 40 Mins — $60</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 1 hr" data-price="80.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Thai/Swedish/Combo/Deep Tissue/Prenatal - 1 hr — $80</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 75 Mins" data-price="100.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 75 Mins — $100</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 90 Mins" data-price="120.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 90 Mins — $120</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 2 hr" data-price="150.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 2 hr — $150</option>
-                    <option value="Couples Massage - 1 hr" data-price="150.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage bundle, featuring two one-hour massages designed to rejuvenate both body and mind.">Couples Massage - 1 hr — $150</option>
-                    <option value="Couples Massage - 75 min" data-price="200.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage, a 75-minute session designed to rejuvenate both body and mind.">Couples Massage - 75 min — $200</option>
-                    <option value="Couples Massage - 90 min" data-price="240.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, offering a rejuvenating 90-minute session.">Couples Massage - 90 min — $240</option>
-                    <option value="Couples Massage - 2 hrs" data-price="300.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, designed to rejuvenate both body and mind over a two-hour session.">Couples Massage - 2 hrs — $300</option>
-                    <option value="Deep Tissue - 1 hr" data-price="80.00" data-points="1" data-desc="Deep tissue techniques to release chronic tension">Deep Tissue - 1 hr — $80</option>
-                    <option value="Swedish - 1 hr" data-price="80.00" data-points="1" data-desc="Gentle, relaxing Swedish massage using long gliding strokes">Swedish - 1 hr — $80</option>
-                    <option value="Foot Massage - 30 min" data-price="40.00" data-points="0" data-desc="Reflexology and foot care">Foot Massage - 30 min — $40</option>
-                    <option value="Foot Massage - 45 min" data-price="60.00" data-points="0" data-desc="Extended foot work and calf massage">Foot Massage - 45 min — $60</option>
-                    <option value="Prenatal - 60 min" data-price="80.00" data-points="1" data-desc="Gentle prenatal massage adapted for expectant mothers">Prenatal - 60 min — $80</option>
-                    <option value="Hot Stone - 75 min" data-price="100.00" data-points="1" data-desc="Hot stone therapy to soothe muscles and promote deep relaxation">Hot Stone - 75 min — $100</option>
-                  </select>
-                </td>
-                <td><input type="number" name="staff2_qty" class="qty" step="1" min="1" value="1"></td>
-                <td><input type="number" name="staff2_tips" class="tips" step="0.01" placeholder="0.00"></td>
-                <td class="result"><span class="gross" data-row="2">0.00</span></td>
-                <td class="result"><span class="tax" data-row="2">0.00</span></td>
-                <td class="result"><span class="net" data-row="2">0.00</span></td>
-                <td><input type="text" name="staff2_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-                <input type="hidden" name="staff2_gross" class="hidden-gross" data-row="2" value="0.00">
-                <input type="hidden" name="staff2_tax" class="hidden-tax" data-row="2" value="0.00">
-                <input type="hidden" name="staff2_net" class="hidden-net" data-row="2" value="0.00">
-              </tr>
-
-              <tr data-row="3">
-                <td><input type="text" name="staff3_name" placeholder="Name"></td>
-                <td>
-                  <select name="staff3_service" class="srv">
-                    <option value="Regular Massage - 40 Mins" data-price="60.00" data-points="0" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Regular Massage - 40 Mins — $60</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 1 hr" data-price="80.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">Thai/Swedish/Combo/Deep Tissue/Prenatal - 1 hr — $80</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 75 Mins" data-price="100.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 75 Mins — $100</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 90 Mins" data-price="120.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 90 Mins — $120</option>
-                    <option value="Thai, Swedish, Combo, Deep Tissue, Prenatal - 2 hr" data-price="150.00" data-points="1" data-desc="Uses massage oils to facilitate smooth, gliding strokes over the entire body">... - 2 hr — $150</option>
-                    <option value="Couples Massage - 1 hr" data-price="150.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage bundle, featuring two one-hour massages designed to rejuvenate both body and mind.">Couples Massage - 1 hr — $150</option>
-                    <option value="Couples Massage - 75 min" data-price="200.00" data-points="2" data-desc="Experience relaxation and connection with our Couples Massage, a 75-minute session designed to rejuvenate both body and mind.">Couples Massage - 75 min — $200</option>
-                    <option value="Couples Massage - 90 min" data-price="240.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, offering a rejuvenating 90-minute session.">Couples Massage - 90 min — $240</option>
-                    <option value="Couples Massage - 2 hrs" data-price="300.00" data-points="2" data-desc="Experience ultimate relaxation with our Couples Massage bundle, designed to rejuvenate both body and mind over a two-hour session.">Couples Massage - 2 hrs — $300</option>
-                    <option value="Deep Tissue - 1 hr" data-price="80.00" data-points="1" data-desc="Deep tissue techniques to release chronic tension">Deep Tissue - 1 hr — $80</option>
-                    <option value="Swedish - 1 hr" data-price="80.00" data-points="1" data-desc="Gentle, relaxing Swedish massage using long gliding strokes">Swedish - 1 hr — $80</option>
-                    <option value="Foot Massage - 30 min" data-price="40.00" data-points="0" data-desc="Reflexology and foot care">Foot Massage - 30 min — $40</option>
-                    <option value="Foot Massage - 45 min" data-price="60.00" data-points="0" data-desc="Extended foot work and calf massage">Foot Massage - 45 min — $60</option>
-                    <option value="Prenatal - 60 min" data-price="80.00" data-points="1" data-desc="Gentle prenatal massage adapted for expectant mothers">Prenatal - 60 min — $80</option>
-                    <option value="Hot Stone - 75 min" data-price="100.00" data-points="1" data-desc="Hot stone therapy to soothe muscles and promote deep relaxation">Hot Stone - 75 min — $100</option>
-                  </select>
-                </td>
-                <td><input type="number" name="staff3_qty" class="qty" step="1" min="1" value="1"></td>
-                <td><input type="number" name="staff3_tips" class="tips" step="0.01" placeholder="0.00"></td>
-                <td class="result"><span class="gross" data-row="3">0.00</span></td>
-                <td class="result"><span class="tax" data-row="3">0.00</span></td>
-                <td class="result"><span class="net" data-row="3">0.00</span></td>
-                <td><input type="text" name="staff3_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-                <input type="hidden" name="staff3_gross" class="hidden-gross" data-row="3" value="0.00">
-                <input type="hidden" name="staff3_tax" class="hidden-tax" data-row="3" value="0.00">
-                <input type="hidden" name="staff3_net" class="hidden-net" data-row="3" value="0.00">
               </tr>
             </tbody>
           </table>
-
-          <div class="summary" style="display:flex;gap:12px;align-items:center;margin-top:10px">
-            <button type="button" id="add-staff" class="btn small">+ Add Staff</button>
-            <div class="muted">Total Gross: <strong id="total-gross">0.00</strong></div>
-            <div class="muted">Total Tax: <strong id="total-tax">0.00</strong></div>
-            <div class="muted">Total Net: <strong id="total-net">0.00</strong></div>
-            <input type="hidden" name="total_gross" id="hidden-total-gross" value="0.00">
-            <input type="hidden" name="total_tax" id="hidden-total-tax" value="0.00">
-            <input type="hidden" name="total_net" id="hidden-total-net" value="0.00">
+          <div class="summary">
+            <div>Total Gross: <strong id="total-gross">0.00</strong></div>
+            <div>Total Tax: <strong id="total-tax">0.00</strong></div>
+            <div>Total Net: <strong id="total-net">0.00</strong></div>
           </div>
-
-          <div class="actions" style="margin-top:10px">
+          <div class="actions">
             <button class="btn" type="submit">Send Payroll</button>
-            <button class="btn secondary" type="reset" id="payroll-reset">Clear</button>
-            <div class="muted" style="margin-left:auto">Tip: open in browser and print for records</div>
+            <button class="btn secondary" type="reset">Clear</button>
           </div>
         </form>
       </section>
     </div>
   </div>
-
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-  <script>
-    (function(){
-      const fmt = v => Number(v || 0).toFixed(2);
-      const body = document.getElementById('payroll-body');
-      let nextRow = 4;
-
-      function recalc(){
-        const taxPercent = Math.max(0, Number(document.getElementById('tax-rate').value || 0)) / 100;
-        let totalGross = 0, totalTax = 0, totalNet = 0;
-
-        document.querySelectorAll('tr[data-row]').forEach(row => {
-          const r = row.getAttribute('data-row');
-          const srvOpt = row.querySelector('.srv')?.selectedOptions?.[0];
-          const price = srvOpt ? Number(srvOpt.getAttribute('data-price') || 0) : 0;
-          const qty = Number(row.querySelector('.qty')?.value || 1);
-          const tips = Number(row.querySelector('.tips')?.value || 0);
-
-          const gross = (price * qty) + tips;
-          const tax = gross * taxPercent;
-          const net = gross - tax;
-
-          totalGross += gross;
-          totalTax += tax;
-          totalNet += net;
-
-          const spanGross = row.querySelector('.gross[data-row="'+r+'"]');
-          const spanTax = row.querySelector('.tax[data-row="'+r+'"]');
-          const spanNet = row.querySelector('.net[data-row="'+r+'"]');
-          if(spanGross) spanGross.textContent = fmt(gross);
-          if(spanTax) spanTax.textContent = fmt(tax);
-          if(spanNet) spanNet.textContent = fmt(net);
-
-          const hg = document.querySelector('.hidden-gross[data-row="'+r+'"]');
-          const ht = document.querySelector('.hidden-tax[data-row="'+r+'"]');
-          const hn = document.querySelector('.hidden-net[data-row="'+r+'"]');
-          if(hg) hg.value = fmt(gross);
-          if(ht) ht.value = fmt(tax);
-          if(hn) hn.value = fmt(net);
-        });
-
-        document.getElementById('total-gross').textContent = fmt(totalGross);
-        document.getElementById('total-tax').textContent = fmt(totalTax);
-        document.getElementById('total-net').textContent = fmt(totalNet);
-
-        document.getElementById('hidden-total-gross').value = fmt(totalGross);
-        document.getElementById('hidden-total-tax').value = fmt(totalTax);
-        document.getElementById('hidden-total-net').value = fmt(totalNet);
-      }
-
-      window.payrollRecalc = recalc;
-
-      function addRow(prefillIndex){
-        const i = prefillIndex || nextRow++;
-        const optionsHTML = document.getElementById('service-select').innerHTML;
-        const tr = document.createElement('tr');
-        tr.setAttribute('data-row', i);
-        tr.innerHTML = `
-          <td><input type="text" name="staff${i}_name" placeholder="Name"></td>
-          <td><select name="staff${i}_service" class="srv">${optionsHTML}</select></td>
-          <td><input type="number" name="staff${i}_qty" class="qty" step="1" min="1" value="1"></td>
-          <td><input type="number" name="staff${i}_tips" class="tips" step="0.01" placeholder="0.00"></td>
-          <td class="result"><span class="gross" data-row="${i}">0.00</span></td>
-          <td class="result"><span class="tax" data-row="${i}">0.00</span></td>
-          <td class="result"><span class="net" data-row="${i}">0.00</span></td>
-          <td><input type="text" name="staff${i}_notes" placeholder="OT, tips..."><button type="button" class="remove-btn" aria-label="Remove row">✕</button></td>
-          <input type="hidden" name="staff${i}_gross" class="hidden-gross" data-row="${i}" value="0.00">
-          <input type="hidden" name="staff${i}_tax" class="hidden-tax" data-row="${i}" value="0.00">
-          <input type="hidden" name="staff${i}_net" class="hidden-net" data-row="${i}" value="0.00">
-        `;
-        body.appendChild(tr);
-        recalc();
-      }
-
-      window.payrollAddRow = addRow;
-
-      body.addEventListener('click', function(e){
-        if(e.target && e.target.matches('.remove-btn')){
-          const tr = e.target.closest('tr[data-row]');
-          if(tr) {
-            tr.remove();
-            recalc();
-          }
-        }
-      });
-
-      document.getElementById('payroll-form').addEventListener('input', function(e){
-        if(e.target.matches('.srv, .qty, .tips, #tax-rate')) recalc();
-      });
-
-      document.getElementById('add-staff').addEventListener('click', function(){
-        addRow();
-      });
-
-      window.addEventListener('DOMContentLoaded', recalc);
-      document.getElementById('payroll-reset').addEventListener('click', function(){
-        setTimeout(() => {
-          Array.from(body.querySelectorAll('tr[data-row]')).forEach(tr => {
-            const idx = Number(tr.getAttribute('data-row'));
-            if(idx > 3) tr.remove();
-          });
-          nextRow = 4;
-          recalc();
-        }, 10);
-      });
-    })();
-  </script>
-
-  <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
-  <script>
-    (function(){
-      const serviceSelect = document.getElementById('service-select');
-      const qtyInput = document.getElementById('srv-qty');
-      const addBtn = document.getElementById('add-service');
-      const cartWrap = document.getElementById('service-cart');
-      const cartBody = document.getElementById('cart-body');
-      const cartTotalEl = document.getElementById('cart-total');
-      const paypalWrap = document.getElementById('paypal-wrap');
-      const form = document.querySelector('form[action^="mailto:info"]');
-      const appointmentTipInput = document.getElementById('appointment-tip');
-
-      window.cart = [];
-      const fmt = v => Number(v||0).toFixed(2);
-
-      function renderCart(){
-        cartBody.innerHTML = '';
-        const cart = window.cart;
-        if(cart.length === 0){
-          cartWrap.style.display = 'none';
-          paypalWrap.style.display = 'none';
-          if(window.syncCartToPayroll) window.syncCartToPayroll();
-          return;
-        }
-        cartWrap.style.display = 'block';
-        paypalWrap.style.display = 'block';
-        let total = 0;
-        cart.forEach((item, i) => {
-          const tr = document.createElement('tr');
-          const subtotal = item.price * item.qty;
-          total += subtotal;
-          tr.innerHTML = `
-            <td>${item.name}</td>
-            <td style="text-align:center">${item.qty}</td>
-            <td style="text-align:right">$${fmt(item.price)}</td>
-            <td style="text-align:right">$${fmt(subtotal)}</td>
-            <td style="text-align:right"><button type="button" class="remove-service" data-i="${i}" style="border:none;background:transparent;color:var(--muted);cursor:pointer">✕</button></td>
-          `;
-          cartBody.appendChild(tr);
-        });
-        const tip = Number(appointmentTipInput?.value || 0);
-        const grand = total + tip;
-        cartTotalEl.textContent = '$' + fmt(grand);
-        syncHiddenFields();
-        if(window.syncCartToPayroll) window.syncCartToPayroll();
-      }
-
-      function syncHiddenFields(){
-        Array.from(form.querySelectorAll('input[name^="cart_"]')).forEach(el => el.remove());
-        let total = 0;
-        window.cart.forEach((it, idx) => {
-          const base = `cart_${idx}_`;
-          const name = document.createElement('input'); name.type='hidden'; name.name = base + 'name'; name.value = it.name; form.appendChild(name);
-          const price = document.createElement('input'); price.type='hidden'; price.name = base + 'price'; price.value = fmt(it.price); form.appendChild(price);
-          const qty = document.createElement('input'); qty.type='hidden'; qty.name = base + 'qty'; qty.value = it.qty; form.appendChild(qty);
-          const sub = document.createElement('input'); sub.type='hidden'; sub.name = base + 'subtotal'; sub.value = fmt(it.price * it.qty); form.appendChild(sub);
-          total += it.price * it.qty;
-        });
-        let tipEl = form.querySelector('input[name="appointment_tip"]');
-        if(!tipEl){ tipEl = document.createElement('input'); tipEl.type='hidden'; tipEl.name='appointment_tip'; form.appendChild(tipEl); }
-        tipEl.value = fmt(Number(appointmentTipInput?.value || 0));
-        let existingTotal = form.querySelector('input[name="appointment_total"]');
-        if(!existingTotal){ existingTotal = document.createElement('input'); existingTotal.type='hidden'; existingTotal.name='appointment_total'; form.appendChild(existingTotal); }
-        existingTotal.value = fmt(total);
-      }
-
-      addBtn.addEventListener('click', () => {
-        const opt = serviceSelect.selectedOptions[0];
-        if(!opt) return;
-        const name = opt.textContent;
-        const price = Number(opt.getAttribute('data-price') || 0);
-        const qty = Math.max(1, Number(qtyInput.value||1));
-        const existing = window.cart.find(c => c.name === name);
-        if(existing){ existing.qty += qty; } else { window.cart.push({name, price, qty}); }
-        renderCart();
-      });
-
-      cartBody.addEventListener('click', (e) => {
-        if(e.target.matches('.remove-service')){
-          const i = Number(e.target.getAttribute('data-i'));
-          if(!isNaN(i)) window.cart.splice(i,1);
-          renderCart();
-        }
-      });
-
-      appointmentTipInput.addEventListener('input', () => {
-        renderCart();
-      });
-
-      paypal.Buttons({
-        createOrder(data, actions){
-          const total = window.cart.reduce((s,i)=> s + i.price * i.qty, 0) + Number(appointmentTipInput?.value || 0);
-          return actions.order.create({
-            purchase_units: [{ amount: { value: fmt(total) } }]
-          });
-        },
-        onApprove(data, actions){
-          return actions.order.capture().then(function(details){
-            let pId = form.querySelector('input[name="paypal_order_id"]');
-            if(!pId){ pId = document.createElement('input'); pId.type='hidden'; pId.name='paypal_order_id'; form.appendChild(pId);}
-            pId.value = details.id || '';
-            let pStatus = form.querySelector('input[name="paypal_status"]');
-            if(!pStatus){ pStatus = document.createElement('input'); pStatus.type='hidden'; pStatus.name='paypal_status'; form.appendChild(pStatus);}
-            pStatus.value = details.status || '';
-            setTimeout(()=> form.submit(), 200);
-          });
-        },
-        onError(err){
-          console.error('PayPal error', err);
-          alert('Payment failed. Please try again or book without paying.');
-        }
-      }).render('#paypal-button-container');
-
-      document.addEventListener('DOMContentLoaded', () => {
-        renderCart();
-      });
-
-      window.renderAppointmentCart = renderCart;
-    })();
-  </script>
-
-  <script>
-    (function(){
-      const therapists = ["Vicky","Amy","Lani","Sherry","Lynn"];
-      const scheduleByDate = {
-        "2025-11-26": {
-          "Vicky": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
-          "Amy":   ["18:00","18:15","18:45","19:00","19:15"],
-          "Lani":  ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
-          "Sherry": [],
-          "Lynn":   []
-        }
-      };
-
-      const scheduleByWeekday = {
-        "Mon": {
-          "Vicky": ["16:30","16:45","17:00","17:15"],
-          "Amy": [],
-          "Lani": ["17:00","17:15"]
-        },
-        "Tue": {},
-        "Wed": {
-          "Vicky": ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"],
-          "Amy":   ["18:00","18:15","18:45","19:00","19:15"],
-          "Lani":  ["16:30","16:45","17:00","17:15","17:30","17:45","18:00","18:15","18:30","18:45","19:00","19:15"]
-        },
-        "Thu": {},
-        "Fri": {},
-        "Sat": {},
-        "Sun": {}
-      };
-
-      function getAvailableSchedule(dateStr){
-        if(!dateStr) return {};
-        if(scheduleByDate[dateStr]) return scheduleByDate[dateStr];
-        const d = new Date(dateStr + 'T00:00:00');
-        if(isNaN(d.getTime())) return {};
-        const weekday = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][d.getDay()];
-        return scheduleByWeekday[weekday] || {};
-      }
-
-      const allTherapists = therapists;
-      const serviceMap = {};
-      document.addEventListener('DOMContentLoaded', () => {
-        const s = document.getElementById('service-select');
-        if(s) Array.from(s.options).forEach(opt => { serviceMap[opt.value] = [...allTherapists]; });
-      });
-
-      const serviceEl = document.getElementById('service-select');
-      const dateEl = document.getElementById('date-input');
-      const therapistEl = document.getElementById('therapist-select');
-      const statusEl = document.getElementById('therapist-availability');
-      const availPanel = document.getElementById('availability-panel');
-      const availList = document.getElementById('availability-list');
-
-      function formatList(arr){
-        if(!arr || arr.length === 0) return 'none';
-        if(arr.length === 1) return arr[0];
-        return arr.slice(0,-1).join(', ') + ' and ' + arr.slice(-1);
-      }
-
-      function timeToDisplay(t){
-        const [hh,mm] = t.split(':').map(Number);
-        const dt = new Date();
-        dt.setHours(hh, mm, 0, 0);
-        return dt.toLocaleTimeString([], {hour:'numeric', minute:'2-digit'});
-      }
-
-      function buildAvailability(dateStr){
-        availList.innerHTML = '';
-        if(!dateStr){
-          availPanel.style.display = 'none';
-          return;
-        }
-        const dateSchedule = getAvailableSchedule(dateStr) || {};
-        let any = false;
-        therapists.forEach(name => {
-          const times = dateSchedule[name] || [];
-          const svc = serviceEl.value;
-          const allowed = (serviceMap[svc] || []).includes(name);
-          if(!allowed) return;
-          const row = document.createElement('div');
-          row.style.display = 'flex';
-          row.style.alignItems = 'flex-start';
-          row.style.gap = '10px';
-          row.style.flexWrap = 'wrap';
-          const h = document.createElement('div');
-          h.style.minWidth = '90px';
-          h.style.fontWeight = 700;
-          h.textContent = name;
-          row.appendChild(h);
-          const timesWrap = document.createElement('div');
-          timesWrap.style.display = 'flex';
-          timesWrap.style.flexWrap = 'wrap';
-          timesWrap.style.gap = '6px';
-          if(times.length === 0){
-            const none = document.createElement('div');
-            none.className = 'muted';
-            none.textContent = 'No times';
-            timesWrap.appendChild(none);
-          } else {
-            any = true;
-            times.forEach(t => {
-              const btn = document.createElement('button');
-              btn.type = 'button';
-              btn.className = 'time-btn';
-              btn.style.border = '1px solid rgba(15,23,42,0.06)';
-              btn.style.background = 'white';
-              btn.style.padding = '6px 8px';
-              btn.style.borderRadius = '8px';
-              btn.style.cursor = 'pointer';
-              btn.style.fontSize = '13px';
-              btn.textContent = timeToDisplay(t);
-              btn.dataset.therapist = name;
-              btn.dataset.time = t;
-              btn.addEventListener('click', () => {
-                therapistEl.value = name;
-                const timeInput = document.querySelector('input[name="Time"]');
-                if(timeInput) timeInput.value = t;
-                statusEl.textContent = `Selected ${name} at ${timeToDisplay(t)}.`;
-                if(window.syncCartToPayroll) window.syncCartToPayroll();
-              });
-              timesWrap.appendChild(btn);
-            });
-          }
-          row.appendChild(timesWrap);
-          availList.appendChild(row);
-        });
-        availPanel.style.display = any ? 'block' : 'none';
-      }
-
-      function updateTherapists(){
-        const service = serviceEl.value;
-        const dateVal = dateEl.value;
-        const date = dateVal ? new Date(dateVal + 'T00:00:00') : null;
-        let list = serviceMap[service] ? [...serviceMap[service]] : [];
-
-        if(date){
-          list = list.filter(name => {
-            const rule = ({"Lani": d => d && (d.getDay() === 0 || d.getDay() === 6)})[name];
-            return typeof rule === 'function' ? !rule(date) : true;
-          });
-        }
-
-        therapistEl.innerHTML = '';
-        const anyOpt = document.createElement('option');
-        anyOpt.value = '';
-        anyOpt.textContent = 'Any';
-        therapistEl.appendChild(anyOpt);
-
-        if(list.length === 0){
-          const none = document.createElement('option');
-          none.textContent = 'No therapists available';
-          none.value = '';
-          none.disabled = true;
-          therapistEl.appendChild(none);
-          statusEl.textContent = 'No therapists available for that service/date. Please choose another date or contact us.';
-        } else {
-          list.forEach(name => {
-            const opt = document.createElement('option');
-            opt.value = name;
-            opt.textContent = name;
-            therapistEl.appendChild(opt);
-          });
-          statusEl.textContent = 'Available: ' + formatList(list) + '.';
-        }
-
-        const opt = serviceEl.selectedOptions[0];
-        if(opt){
-          const price = opt.getAttribute('data-price') || '0.00';
-          const points = opt.getAttribute('data-points') || '0';
-          const desc = opt.getAttribute('data-desc') || '';
-          document.getElementById('sd-price').textContent = '$' + Number(price).toFixed(2);
-          document.getElementById('sd-points').textContent = points;
-          document.getElementById('sd-desc').textContent = desc;
-        }
-
-        const isoDate = dateEl.value;
-        buildAvailability(isoDate);
-      }
-
-      serviceEl.addEventListener('change', updateTherapists);
-      dateEl.addEventListener('change', updateTherapists);
-
-      document.getElementById('use-vagaro')?.addEventListener('change', (e)=> {
-        if(e.target.checked){
-          document.getElementById('availability-panel').style.display = 'none';
-        } else {
-          updateTherapists();
-        }
-      });
-
-      const loadVagaroBtn = document.getElementById('load-vagaro');
-      const vagaroWrap = document.getElementById('vagaro-wrap');
-      const vagaroIframe = document.getElementById('vagaro-iframe');
-      const importVagaroBtn = document.getElementById('import-vagaro');
-      const vagaroStatus = document.getElementById('vagaro-status');
-
-      const VAGARO_WIDGET_URL = "https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVM4SakI1KjE3knRkP3ywpWVXk0IjFrFOrvdEdsZ/CVa7nEj6MRQuAwfBBGT5tOpfUYvKjmzdwCZhUVBSZgZ04zg5ODJm5RfAQvgigpMCzk85F500OkxY7h72LHqdhM0GKaslwm/63uDPVtlwPtiq0zxGfszkWkfL5W+J0D0EkvUeW14OtUdj8jJb5pybomIa3DUm18bl1nmoOtPVAdZ9ZJ5RdQHGeGZ1NWgQ+x9CqA/rxUWUoOLarHcF9qDm59aYGdKtT6r2+2Q2Z47D7SKuVTOMtAlCe3Niqc+vnHiObhEj4TzIrL8I0rNYX57wQIXRJaZ4Mb8dCHqXiu3w9R+nwhYvGA0C6rrJlSUk8ux5ZZgMQOCqw7vFr4LJh87bywl163VTQNGhFwev0M1AzkmQIjFivS0DfLpuM66KyICq9pPzBPQncS7AAPIVi848mlEadg==";
-
-      loadVagaroBtn.addEventListener('click', () => {
-        vagaroIframe.src = VAGARO_WIDGET_URL;
-        vagaroWrap.style.display = 'block';
-        vagaroStatus.textContent = 'Square widget loaded. Use it to select your appointment.';
-      });
-
-      importVagaroBtn.addEventListener('click', () => {
-        vagaroStatus.textContent = 'Import not implemented yet. Use the widget to book directly or enter details manually.';
-      });
-
-      window.addEventListener('DOMContentLoaded', updateTherapists);
-    })();
-  </script>
-
-  <script>
-  (function(){
-    const STAFF_USERNAME = 'MontraThaiStaff';
-    const STAFF_PASSWORD = 'Massage2025$';
-
-    const payrollTab = document.querySelector('input#tab-payroll');
-    const payrollLabel = document.querySelector('label[for="tab-payroll"]');
-    const container = document.querySelector('.staff-login-container');
-    const usernameInput = document.getElementById('username');
-    const passwordInput = document.getElementById('password');
-    const submitBtn = document.getElementById('btn-submit-login');
-    const signoutBtn = document.getElementById('btn-signout');
-
-    const isLoggedIn = sessionStorage.getItem('staffLoggedIn') === 'true';
-
-    function showPayroll() {
-      payrollLabel.style.display = 'block';
-      payrollTab.disabled = false;
-      sessionStorage.setItem('staffLoggedIn', 'true');
-      container.classList.add('logged-in');
-    }
-
-    function hidePayroll() {
-      payrollLabel.style.display = 'none';
-      payrollTab.disabled = true;
-      payrollTab.checked = false;
-      document.getElementById('tab-appointment').checked = true;
-      sessionStorage.removeItem('staffLoggedIn');
-      container.classList.remove('logged-in');
-      usernameInput.value = '';
-      passwordInput.value = '';
-    }
-
-    submitBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const username = usernameInput.value.trim();
-      const password = passwordInput.value.trim();
-
-      if (!username || !password) {
-        alert('Please enter both username and password.');
-        return;
-      }
-
-      if (username === STAFF_USERNAME && password === STAFF_PASSWORD) {
-        showPayroll();
-        alert('Login successful! Payroll tab is now available.');
-      } else {
-        alert('Invalid credentials. Access denied.');
-        hidePayroll();
-      }
-    });
-
-    signoutBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      hidePayroll();
-      alert('You have been signed out.');
-    });
-
-    if (isLoggedIn) {
-      showPayroll();
-    } else {
-      hidePayroll();
-    }
-  })();
-  </script>
-
 </body>
 </html>
