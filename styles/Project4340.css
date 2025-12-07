@@ -95,15 +95,23 @@ h1{margin:0;font-size:18px;font-weight:600}
   z-index:1000;
 }
 
-/* Show dropdown on hover and when JS adds .active (for touch) */
-.staff-auth-wrap:hover .staff-dropdown,
+/* For click toggle */
 .staff-dropdown.active{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
 
-.dropdown-content{ padding:20px; }
+/* Also open on hover over the wrapper or button */
+.staff-auth-wrap:hover .staff-dropdown{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-content{
+  padding:20px;
+}
 
 .auth-section h3{
   margin:0 0 12px 0;
@@ -111,7 +119,9 @@ h1{margin:0;font-size:18px;font-weight:600}
   font-weight:600;
 }
 
-.form-group{ margin-bottom:12px; }
+.form-group{
+  margin-bottom:12px;
+}
 
 .form-group label{
   display:block;
@@ -152,23 +162,9 @@ h1{margin:0;font-size:18px;font-weight:600}
   transition:transform 0.2s ease;
 }
 
-.btn-auth:hover{ transform:translateY(-2px); }
-
-.auth-toggle{
-  font-size:13px;
-  color:var(--muted);
-  margin-top:12px;
-  text-align:center;
+.btn-auth:hover{
+  transform:translateY(-2px);
 }
-
-.auth-toggle a{
-  color:var(--accent);
-  text-decoration:none;
-  font-weight:600;
-  cursor:pointer;
-}
-
-.auth-toggle a:hover{ text-decoration:underline; }
 
 .error-message{
   font-size:12px;
@@ -236,10 +232,9 @@ input[name="tab"]{position:absolute;left:-9999px}
   border:1px solid transparent;
 }
 
-/* Payroll tab looks disabled until login */
+/* Payroll tab completely hidden until JS shows it */
 #payroll-tab-label{
-  opacity:0.5;
-  cursor:not-allowed;
+  display:none;
 }
 
 #tab-appointment:checked ~ .tabs-labels .tabs label[for="tab-appointment"],
@@ -251,7 +246,6 @@ input[name="tab"]{position:absolute;left:-9999px}
 }
 
 .tab-content section{display:none}
-
 #tab-appointment:checked ~ .tab-content section[aria-labelledby="appt-title"],
 #tab-payroll:checked ~ .tab-content section[aria-labelledby="pay-title"]{
   display:block;
@@ -265,7 +259,11 @@ input[name="tab"]{position:absolute;left:-9999px}
   margin-bottom:12px;
 }
 
-.thumbs{display:flex;gap:8px;margin:8px 0 12px}
+.thumbs{
+  display:flex;
+  gap:8px;
+  margin:8px 0 12px;
+}
 
 .thumbs img{
   width:86px;
@@ -278,7 +276,9 @@ input[name="tab"]{position:absolute;left:-9999px}
   transition:transform .18s ease;
 }
 
-.thumbs img:hover{transform:translateY(-6px)}
+.thumbs img:hover{
+  transform:translateY(-6px);
+}
 
 .grid{
   display:grid;
@@ -351,7 +351,10 @@ textarea:focus{
   box-shadow:none;
 }
 
-.muted{color:var(--muted);font-size:13px}
+.muted{
+  color:var(--muted);
+  font-size:13px;
+}
 
 table.pay{
   width:100%;
@@ -385,7 +388,9 @@ table.pay input{
   width:100%;
 }
 
-table.pay input:focus{outline:none}
+table.pay input:focus{
+  outline:none;
+}
 
 table.pay .result{
   font-weight:600;
@@ -447,9 +452,19 @@ table.pay .result span{
   font-size:14px;
 }
 
-.service-details .sd-price{font-weight:700;color:var(--accent)}
-.service-details .sd-points{color:var(--muted);font-size:13px}
-.service-details .sd-desc{line-height:1.35}
+.service-details .sd-price{
+  font-weight:700;
+  color:var(--accent);
+}
+
+.service-details .sd-points{
+  color:var(--muted);
+  font-size:13px;
+}
+
+.service-details .sd-desc{
+  line-height:1.35;
+}
 
 .service-cart{margin-top:8px}
 
@@ -465,7 +480,10 @@ table.pay .result span{
   border-bottom:1px solid rgba(15,23,42,0.02);
 }
 
-.cart-total{font-size:14px;font-weight:600}
+.cart-total{
+  font-size:14px;
+  font-weight:600;
+}
 
 .paypal-wrap{margin-top:10px}
 
