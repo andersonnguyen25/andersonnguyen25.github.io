@@ -29,7 +29,6 @@
 
             <div class="form-group">
               <label>Username</label>
-              <!-- UPDATED PLACEHOLDER HERE -->
               <input type="text" id="login-username" placeholder="Enter username">
             </div>
 
@@ -449,7 +448,7 @@
 })();
 </script>
 
-<!-- Payroll calculator script (unchanged, fixed template literals) -->
+<!-- Payroll calculator script -->
 <script>
 (function(){
   const fmt = v => Number(v || 0).toFixed(2);
@@ -745,7 +744,7 @@
 })();
 </script>
 
-<!-- Therapist availability script -->
+<!-- Therapist availability script + SQUARE redirect -->
 <script>
 (function(){
   const therapists = ["Vicky","Amy","Lani","Sherry","Lynn"];
@@ -955,22 +954,20 @@
     }
   });
 
+  // *** SQUARE REDIRECTS ***
   const loadVagaroBtn = document.getElementById('load-vagaro');
-  const vagaroWrap = document.getElementById('vagaro-wrap');
-  const vagaroIframe = document.getElementById('vagaro-iframe');
   const importVagaroBtn = document.getElementById('import-vagaro');
   const vagaroStatus = document.getElementById('vagaro-status');
-
-  const VAGARO_WIDGET_URL = "https://www.vagaro.com//Users/BusinessWidget.aspx?enc=MMLjhIwJMcwFQhXLL7ifVM4SakI1KjE3knRkP3ywpWVXk0IjFrFOrvdEdsZ/CVa7nEj6MRQuAwfBBGT5tOpfUYvKjmzdwCZhUVBSZgZ04zg5ODJm5RfAQvgigpMCzk85F500OkxY7h72LHqdhM0GKaslwm/63uDPVtlwPtiq0zxGfszkWkfL5W+J0D0EkvUeW14OtUdj8jJb5pybomIa3DUm18bl1nmoOtPVAdZ9ZJ5RdQHGeGZ1NWgQ+x9CqA/rxUWUoOLarHcF9qDm59aYGdKtT6r2+2Q2Z47D7SKuVTOMtAlCe3Niqc+vnHiObhEj4TzIrL8I0rNYX57wQIXRJaZ4Mb8dCHqXiu3w9R+nwhYvGA0C6rrJlSUk8ux5ZZgMQOCqw7vFr4LJh87bywl163VTQNGhFwev0M1AzkmQIjFivS0DfLpuM66KyICq9pPzBPQncS7AAPIVi848mlEadg==";
+  const SQUARE_URL = "https://montra-thai-massage.square.site/";
 
   loadVagaroBtn.addEventListener('click', () => {
-    vagaroIframe.src = VAGARO_WIDGET_URL;
-    vagaroWrap.style.display = 'block';
-    vagaroStatus.textContent = 'Loading Vagaro widget...';
+    vagaroStatus.textContent = 'Opening Square booking site...';
+    window.location.href = SQUARE_URL;   // use window.open(SQUARE_URL, '_blank') for new tab
   });
 
   importVagaroBtn.addEventListener('click', () => {
-    vagaroStatus.textContent = 'Please copy appointment info from Vagaro into the form.';
+    vagaroStatus.textContent = 'Opening Square booking site...';
+    window.location.href = SQUARE_URL;
   });
 })();
 </script>
